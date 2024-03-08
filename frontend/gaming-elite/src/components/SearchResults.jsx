@@ -1,13 +1,8 @@
-
-
-
-
-const Search = () => {
-  
+export default function SearchResults () {
 
     return (
-           
-    );
-};
-export default Search;
+           <></>
+    )
+}
+
 
