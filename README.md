@@ -38,5 +38,12 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 
 ## ERD
 ![ERD-1](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/b64d8fbb-5de4-4e23-8c1a-d7331d93dadd)
-![ERD(<img width="946" alt="ERD-2" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/7dbf2cc8-c6a2-4507-aae4-7cf87333ee82">)
+![ERD-2](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3830d1c6-844d-44cc-9ba5-c544da2662b3)
+
+
+## Wireframe
+![Wireframe-1](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/6e940fb1-55a8-4107-b3a0-6652e3edbcc4)
+![Wireframe-2](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/27420e54-e450-4295-b6ed-9da6a68db737)
+![Wireframe-3](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3246b0ff-5842-462d-b91a-97f5038e999f)
+
 
