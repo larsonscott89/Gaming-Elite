@@ -1,16 +1,16 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
+let uri = "mongodb+srv://Lane17027:Lane17027@cluster0.edoucjb.mongodb.net/?appName=Cluster0"
 mongoose
-    .connect('mongodb://127.0.0.1:27017/animeDatabase')
-    .then(() => {
-        console.log('Successfully connected to MongoDB.')
-    })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
+  .connect(uri)
+  .then(() => {
+    console.log(`Successfully connected to ${uri}`);
+  })
+  .catch((e) => {
+    console.error("Connection error", e.message);
+  });
 
+ mongoose.set('debug', true)
+const db = mongoose.connection;
 
-mongoose.set('debug', true)
-const db = mongoose.connection
-
-module.exports = db
+module.exports = db;
