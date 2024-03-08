@@ -1,3 +1,9 @@
-export default function Accessories (){
-    return
-}
+export default function Footer () {
+    return (
+    <footer>
+      <p>&copy; Gaming Elite</p>
+    </footer>
+        
+        
+     )
+    }
