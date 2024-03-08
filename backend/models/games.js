@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
+const { Schema } = require("mongoose");
 
-const gamesSchema = new mongoose.Schema(
+
+const Games = new Schema(
     {
         consoleId: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Consoles'} ],
         title:{type: String, required: true},
@@ -15,4 +17,4 @@ const gamesSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Games', gamesSchema)
+module.exports = mongoose.model('Games', Games)

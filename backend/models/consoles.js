@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+const { Schema } = require("mongoose");
 
-const consolesSchema = new mongoose.Schema(
+const Consoles = new Schema(
     {
         brandId: {type: mongoose.Schema.Types.ObjectId, ref: 'Brands'},
         name:{type: String, required: true},
@@ -11,4 +12,4 @@ const consolesSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Consoles', consolesSchema)
+module.exports = mongoose.model('Consoles', Consoles)
