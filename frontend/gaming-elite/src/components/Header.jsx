@@ -1,6 +1,6 @@
 
 import Nav from "./Nav";
-import Cart from "./Cart";
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
