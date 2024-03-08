@@ -21,15 +21,15 @@ app.listen(PORT, () => {
 })
 
 // create
-app.post('/users', userController.getUser)
 app.post('/users/signup', userController.userSignup)
 app.post('/users/login', userController.userLogin)
+app.post('/users', userController.createUser)
 
 // read
 app.get('/brands', brandController.getBrand)
 app.get('/consoles', consoleController.getConsole)
 app.get('/games', gameController.getGame)
-
+app.get('/users', userController.getUser)
 
 // update
 app.put('/users', userController.updateUser)
