@@ -4,7 +4,7 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 ## Teammates
 - Scott Larsen [github](https://github.com/larsonscott89)
 - Lane Nichols [github](https://github.com/Lane17027)
-- Kevin Wang [github]
+- Kevin Wang [github](https://github.com/kevinwang2882)
 - Connor Reidy [github](https://github.com/connorreidy1)
 
 ## Technologies
