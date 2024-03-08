@@ -21,15 +21,18 @@ app.listen(PORT, () => {
 })
 
 // create
-app.get('/users', userController.getUser)
+app.post('/users', userController.getUser)
+app.post('/users', userController.userSignup)
+app.post('/users', userController.userLogin)
 
 // read
 app.get('/brands', brandController.getBrand)
 app.get('/consoles', consoleController.getConsole)
 app.get('/games', gameController.getGame)
 
+
 // update
-app.get('/users', userController.updateUser)
+app.put('/users', userController.updateUser)
 
 // delete
-app.get('/users', userController.deleteUser)
+app.delete('/users', userController.deleteUser)
