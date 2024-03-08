@@ -37,8 +37,9 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 - Create more avenues of filtering to find products.
 
 ## ERD
-![ERD-1](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/b64d8fbb-5de4-4e23-8c1a-d7331d93dadd)
-![ERD-2](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3830d1c6-844d-44cc-9ba5-c544da2662b3)
+<img width="500" alt="ERD-1" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3830d1c6-844d-44cc-9ba5-c544da2662b3">
+<img width="500" alt="ERD-2" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3a77025b-4f58-4395-859b-17aa4c8c52b4">
+
 
 
 ## Wireframe
