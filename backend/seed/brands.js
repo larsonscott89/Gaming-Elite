@@ -10,7 +10,7 @@ const main = async () => {
         {
             name:'Sony',
             year_established: 1946,
-            country: 'Japan'
+            country: 'Japan',
         }
     ]
     await Brand.insertMany(brands)

@@ -24,7 +24,7 @@ app.listen(PORT, () => {
 
 
 // read
-
+app.get('/brands', brandController.getBrand);
 
 // update
 
