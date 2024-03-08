@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-let uri = "mongodb+srv://Lane17027:Lane17027@cluster0.edoucjb.mongodb.net/?appName=Cluster0"
+let uri = "mongodb+srv://Lane17027:Lane17027@cmonluster0.edoucjb.mongodb.net/?appName=Cluster0"
 mongoose
   .connect(uri)
   .then(() => {
