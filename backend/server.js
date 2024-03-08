@@ -24,7 +24,9 @@ app.listen(PORT, () => {
 
 
 // read
-app.get('/brands', brandController.getBrand);
+app.get('/brands', brandController.getBrand)
+app.get('/consoles', consoleController.getConsole)
+app.get('/games', gameController.getGame)
 
 // update
 
