@@ -38,15 +38,11 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 
 ## ERD
 <img width="500" alt="ERD-1" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/1fdaa851-2b28-440a-a616-0f29e4de0207">
-
-<img width="500" alt="ERD-1" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3830d1c6-844d-44cc-9ba5-c544da2662b3">
 <img width="500" alt="ERD-2" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3a77025b-4f58-4395-859b-17aa4c8c52b4">
 
-
-
 ## Wireframe
-![Wireframe-1](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/6e940fb1-55a8-4107-b3a0-6652e3edbcc4)
-![Wireframe-2](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/27420e54-e450-4295-b6ed-9da6a68db737)
-![Wireframe-3](https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3246b0ff-5842-462d-b91a-97f5038e999f)
+<img width="500" alt="Wireframe-1" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/6e940fb1-55a8-4107-b3a0-6652e3edbcc4">
+<img width="500" alt="Wireframe-2" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/27420e54-e450-4295-b6ed-9da6a68db737">
+<img width="500" alt="Wireframe-3" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3246b0ff-5842-462d-b91a-97f5038e999f">
 
 
