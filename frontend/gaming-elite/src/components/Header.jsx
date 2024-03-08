@@ -1,3 +1,4 @@
+
 import Nav from "./Nav";
 import Cart from "./Cart";
 import { useState } from 'react';
@@ -59,4 +60,5 @@ export default function Header({ setSearchTerm, setSearchType, loggedIn, usernam
             </div>
         </div>
     );
+
 }

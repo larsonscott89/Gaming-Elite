@@ -5,6 +5,7 @@ import GameDetails from "./GameDetails"
 import Accessories from "./Accessories"
 import SearchResults from "./SearchResults"
 import UserSignup from "./UserSignup"
+
 import { Routes, Route } from 'react-router-dom';
 import UserLogin from "./UserLogin"
 import Cart from './Cart'
@@ -27,3 +28,4 @@ export default function Main (){
 
     )
 }
+

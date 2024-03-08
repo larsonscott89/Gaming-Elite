@@ -47,5 +47,6 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 <img width="500" alt="Wireframe-1" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/6e940fb1-55a8-4107-b3a0-6652e3edbcc4">
 <img width="500" alt="Wireframe-2" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/27420e54-e450-4295-b6ed-9da6a68db737">
 <img width="500" alt="Wireframe-3" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3246b0ff-5842-462d-b91a-97f5038e999f">
+<img width="500" alt="Wireframe-3" src="https://files.slack.com/files-pri/T0351JZQ0-F06NGKVBF54/componenthierarchy.png">
 
 
