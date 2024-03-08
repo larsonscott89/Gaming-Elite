@@ -1,3 +1,3 @@
-export default function Accessories (){
-    return 
+export default function Accessories() {
+  return
 }
