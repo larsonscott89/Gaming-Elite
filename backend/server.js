@@ -21,7 +21,7 @@ app.listen(PORT, () => {
 })
 
 // create
-
+app.get('/users', userController.getUser)
 
 // read
 app.get('/brands', brandController.getBrand)
@@ -29,6 +29,7 @@ app.get('/consoles', consoleController.getConsole)
 app.get('/games', gameController.getGame)
 
 // update
-
+app.get('/users', userController.updateUser)
 
 // delete
+app.get('/users', userController.deleteUser)
