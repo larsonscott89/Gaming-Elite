@@ -6,6 +6,8 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 - Lane Nichols [github](https://github.com/Lane17027)
 - Kevin Wang [github](https://github.com/kevinwang2882)
 - Connor Reidy [github](https://github.com/connorreidy1)
+## Trello - Project Manager
+[Trello](https://trello.com/b/fJ1fUONn/project-3-games-elite)
 
 ## Technologies
 - Mongo
