@@ -1,5 +1,5 @@
 const db= require('../db/index')
-const Console= require('../models/consoles')
+const {Consoles }= require('../models')
 
 // Connect to the database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
