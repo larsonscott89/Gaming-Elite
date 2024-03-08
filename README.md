@@ -31,6 +31,7 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 - **Confirmation**: The user receives a confirmation message when a product has been successfully added to the cart.
 - **View Cart**: The user can navigate to the shopping cart page and view the items that have been added. It will display the items indiviual values and the total cart value. The user can adjust quantities, remove items, or "proceed to checkout".
 - **Flexbox**: Utilize Flexbox to a create dynamic app that works across all screens.
+- **Ads**: Fake banner ads will be displayed on the webpages to give the app an authentic look.
 
 ## Stretch
 - Create Models and Navigation for more products.
