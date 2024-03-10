@@ -23,10 +23,14 @@ app.listen(PORT, () => {
 })
 
 // create
+
 app.post('/users', userController.getUser)
 app.get('/users/:id', userController.getUserById)
+
+
 app.post('/users/signup', userController.userSignup)
 app.post('/users/login', userController.userLogin)
+app.post('/users/create', userController.createUser)
 
 // read
 app.get('/brands', brandController.getBrand)
