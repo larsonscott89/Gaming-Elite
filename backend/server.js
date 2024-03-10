@@ -30,15 +30,12 @@ app.get('/users/:id', userController.getUserById)
 
 app.post('/users/signup', userController.userSignup)
 app.post('/users/login', userController.userLogin)
-app.post('/users/create', userController.createUser)
+
 
 // read
 app.get('/brands', brandController.getBrand)
 app.get('/consoles', consoleController.getConsole)
 app.get('/games', gameController.getGame)
-
-
-// update
 app.put('/users/:id/update', userController.updateUser)
 
 // delete
@@ -72,3 +69,4 @@ app.get('/users/:id/shopping-cart/items', getCartItemsInShoppingCart)
 app.get('/*', async (req,res) => {
   res.send('An error has occurred. Try again later (404)')
 })
+
