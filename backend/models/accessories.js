@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = require("mongoose");
 
-const Brand = new Schema(
+const Accessory = new Schema(
     {
         name:{type: String, required: true},
         year_established: {type: Number, required: true},
@@ -10,4 +10,4 @@ const Brand = new Schema(
     { timestamps: true }
 )
 
-module.exports =  Brand
+module.exports =  Accessory

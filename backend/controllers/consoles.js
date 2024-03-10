@@ -1,4 +1,4 @@
-const Consoles = require('../models/consoles')
+const {Consoles} = require('../models')
 
 const getConsole = async (req, res) => {
   try {
