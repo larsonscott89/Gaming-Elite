@@ -6,6 +6,8 @@ const gameController = require('./controllers/games')
 const consoleController = require('./controllers/consoles')
 const brandController = require('./controllers/brands')
 const userController = require('./controllers/user')
+const { getCartItems, getCartItemById, createCartItem, updateCartItem, deleteCartItem, getCartItemsInShoppingCart } = require('./controllers/cartItemController');
+const { getShoppingCarts, getShoppingCartById, createShoppingCart, updateShoppingCart, deleteShoppingCart, getUserShoppingCart } = require('./controllers/shoppingCartController');
 
 const db = require('./db')
 
@@ -21,18 +23,45 @@ app.listen(PORT, () => {
 })
 
 // create
+
+app.post('/users', userController.getUser)
+app.get('/users/:id', userController.getUserById)
+
+
 app.post('/users/signup', userController.userSignup)
 app.post('/users/login', userController.userLogin)
-app.post('/users', userController.createUser)
+app.post('/users/create', userController.createUser)
 
 // read
 app.get('/brands', brandController.getBrand)
 app.get('/consoles', consoleController.getConsole)
 app.get('/games', gameController.getGame)
-app.get('/users', userController.getUser)
+
 
 // update
-app.put('/users', userController.updateUser)
+app.put('/users/:id/update', userController.updateUser)
 
 // delete
-app.delete('/users', userController.deleteUser)
+app.delete('/users/:id/delete', userController.deleteUser)
+
+//shoppingcart
+app.get('/shoppingCarts', getShoppingCarts)
+app.post('/shoppingCarts/create', createShoppingCart)
+app.get('/shoppingCarts/:id', getShoppingCartById)
+app.put('/shoppingCarts/:id/update', updateShoppingCart)
+app.delete('/shoppingCarts/:id/delete', deleteShoppingCart)
+
+//shoppingcart items
+app.get('/cartItems', getCartItems)
+app.post('/cartItems/create', createCartItem)
+app.get('/cartItems/:id', getCartItemById)
+app.put('/cartItems/:id/update', updateCartItem)
+app.delete('/cartItems/:id/delete', deleteCartItem)
+//user shopping cart and items
+app.get('/users/:id/shopping-cart', getUserShoppingCart);
+app.get('/users/:id/shopping-cart/items', getCartItemsInShoppingCart)
+
+//handle 404 error
+app.get('/*', async (req,res) => {
+  res.send('An error has occurred. Try again later (404)')
+})
