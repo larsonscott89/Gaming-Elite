@@ -70,7 +70,7 @@ const createUser = async (req, res) => {
         const { id } = req.params
         const deleted = await User.findByIdAndDelete(id)
         if (deleted) {
-            return res.status(200).send("Ingredient deleted")
+            return res.status(200).send("User deleted")
         }
         throw new Error("User not found")
     } catch (error) {

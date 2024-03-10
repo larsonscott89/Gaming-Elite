@@ -24,6 +24,9 @@ app.listen(PORT, () => {
 app.post('/users/signup', userController.userSignup)
 app.post('/users/login', userController.userLogin)
 app.post('/users', userController.createUser)
+app.post('/games', gameController.createGame)
+app.post('/brands', brandController.createBrand)
+app.post('/consoles', consoleController.createConsole)
 
 // read
 app.get('/brands', brandController.getBrand)
@@ -33,6 +36,12 @@ app.get('/users', userController.getUser)
 
 // update
 app.put('/users', userController.updateUser)
+app.put('/games', gameController.updateGame)
+app.put('/brands', brandController.updateBrand)
+app.put('/consoles', consoleController.updateConsole)
 
 // delete
 app.delete('/users', userController.deleteUser)
+app.delete('/games', gameController.deleteGame)
+app.delete('/brands', brandController.deleteBrand)
+app.delete('/consoles', consoleController.deleteConsole)
