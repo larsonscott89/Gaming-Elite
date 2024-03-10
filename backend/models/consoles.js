@@ -12,4 +12,4 @@ const Consoles = new Schema(
     }
 )
 
-module.exports = mongoose.model('Consoles', Consoles)
+module.exports = Consoles

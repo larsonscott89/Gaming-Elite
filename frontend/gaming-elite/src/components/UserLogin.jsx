@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-
-const UserLogin = () => {
+const UserLogin = ({ setLoggedIn ,setUsername }) => {
     const [user, setUser] = useState({
         username: '',
         password: '',
+      
     });
+    const navigate = useNavigate();
+    
 
     const handleChange = (e) => {
         setUser({
@@ -17,10 +20,7 @@ const UserLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-
             const response = await fetch('http://localhost:3001/users/login', {
-
-
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -34,7 +34,9 @@ const UserLogin = () => {
                 throw new Error('Login failed');
             }
             alert('Login successful');
-            // Redirect to the dashboard or home page
+            setLoggedIn(true); // Call setLoggedIn here
+            setUsername(user.username); // Use user.username
+            navigate('/'); // Navigate to the home page
         } catch (error) {
             console.error('Error logging in:', error.message);
             alert('Login failed');
@@ -45,6 +47,7 @@ const UserLogin = () => {
         setUser({
             username: '',
             password: '',
+            
         });
     };
 

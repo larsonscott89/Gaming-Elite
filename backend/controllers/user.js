@@ -1,4 +1,4 @@
-const User = require('../models/user')
+const {User} = require('../models')
 
 const userSignup = async (req, res) => {
   try {
@@ -77,6 +77,16 @@ const createUser = async (req, res) => {
         return res.status(500).send(error.message)
     }
   }
+  const getUserById = async (req,res) => {
+    try {
+        const user = await User.findById(req.params.id).populate()
+        if (user) {
+            res.json(user)
+        }
+    } catch (error) {
+        return res.status(500).send('Collection with the specified ID does not exists');
+    }
+}
 
 module.exports = {
   getUser,
@@ -84,5 +94,6 @@ module.exports = {
   updateUser,
   deleteUser,
   userSignup,
-  userLogin
+  userLogin,
+  getUserById
 }
