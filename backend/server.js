@@ -23,23 +23,33 @@ app.listen(PORT, () => {
 })
 
 // create
-
-app.post('/users', userController.getUser)
-app.get('/users/:id', userController.getUserById)
-
-
 app.post('/users/signup', userController.userSignup)
 app.post('/users/login', userController.userLogin)
-
+app.post('/games', gameController.createGame)
+app.post('/brands', brandController.createBrand)
+app.post('/consoles', consoleController.createConsole)
+app.post('/users/create', userController.createUser)
 
 // read
 app.get('/brands', brandController.getBrand)
 app.get('/consoles', consoleController.getConsole)
 app.get('/games', gameController.getGame)
+app.get('/users/:id', userController.getUserById)
+app.get('/users', userController.getUser)
+
+// update
 app.put('/users/:id/update', userController.updateUser)
+app.put('/users', userController.updateUser)
+app.put('/games', gameController.updateGame)
+app.put('/brands', brandController.updateBrand)
+app.put('/consoles', consoleController.updateConsole)
 
 // delete
 app.delete('/users/:id/delete', userController.deleteUser)
+app.delete('/users', userController.deleteUser)
+app.delete('/games', gameController.deleteGame)
+app.delete('/brands', brandController.deleteBrand)
+app.delete('/consoles', consoleController.deleteConsole)
 
 //shoppingcart
 app.get('/shoppingCarts', getShoppingCarts)
