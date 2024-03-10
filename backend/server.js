@@ -8,7 +8,7 @@ const brandController = require('./controllers/brands')
 const userController = require('./controllers/user')
 const { getCartItems, getCartItemById, createCartItem, updateCartItem, deleteCartItem, getCartItemsInShoppingCart } = require('./controllers/cartItemController');
 const { getShoppingCarts, getShoppingCartById, createShoppingCart, updateShoppingCart, deleteShoppingCart, getUserShoppingCart } = require('./controllers/shoppingCartController');
-
+const { getAccessory, getAccessoryById, createAccessory, updateAccessory, deleteAccessory} = require('./controllers/accessoryController');
 const db = require('./db')
 
 const app = express()
@@ -50,6 +50,13 @@ app.post('/shoppingCarts/create', createShoppingCart)
 app.get('/shoppingCarts/:id', getShoppingCartById)
 app.put('/shoppingCarts/:id/update', updateShoppingCart)
 app.delete('/shoppingCarts/:id/delete', deleteShoppingCart)
+
+//accessories
+app.get('/accessories', getAccessory)
+app.post('/saccessories/create', createAccessory)
+app.get('/accessories/:id', getAccessoryById)
+app.put('/accessories/:id/update', updateAccessory)
+app.delete('/accessoriess/:id/delete', deleteAccessory)
 
 //shoppingcart items
 app.get('/cartItems', getCartItems)

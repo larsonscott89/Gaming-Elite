@@ -5,9 +5,10 @@ const {Consoles }= require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-
+    try {
     const consoles=[
         {
+            
             brandId: '65eb6498f6c5cff3af5f2e0e',
             name: 'Xbox 360',
             brand: 'Microsoft',
@@ -132,9 +133,12 @@ const main = async () => {
 
 
     ]
-    await Console.insertMany(consoles)
+    await Consoles.insertMany(consoles)
     console.log("Created some Consoles!")
+}catch (err) {
+    console.error('Error inserting category:', err);
 }
+};
 const run = async () => {
     await main()
     db.close()
