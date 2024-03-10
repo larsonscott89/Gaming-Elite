@@ -2,8 +2,14 @@
 import { useState } from 'react';
 import '../style/UserSignup.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const UserSignup = () => {
+
+    const navigate = useNavigate();
+    
     const [user, setUser] = useState({
         username: '',
         password: '',
@@ -42,6 +48,7 @@ const UserSignup = () => {
                 throw new Error('Failed to create user');
             }
             alert('User created successfully');
+            navigate('/login');
             // Reset form fields
             setUser({
                 username: '',
