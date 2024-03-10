@@ -1,10 +1,9 @@
-
 import Nav from "./Nav";
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Header({ setSearchTerm, setSearchType, loggedIn, username }) {
+export default function Header({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn }) {
     const [search, setSearch] = useState('');
 
     const handleChange = (event) => {
@@ -15,12 +14,14 @@ export default function Header({ setSearchTerm, setSearchType, loggedIn, usernam
         event.preventDefault();
         setSearchTerm(search);
     };
-
+    const handleSignOut = () => {
+        setLoggedIn(false);
+    };
     return (
         <div>
             <div className="title-and-buttons">
-            <Link to="/home">
-                <h1>Gaming Elite</h1>
+                <Link to="/home">
+                    <h1>Gaming Elite</h1>
                 </Link>
                 <div className="search-bar">
                     <form onSubmit={handleSubmit}>
@@ -30,7 +31,10 @@ export default function Header({ setSearchTerm, setSearchType, loggedIn, usernam
                 </div>
                 <div className="top-right-buttons">
                     {loggedIn ? (
-                        <span>{username}</span>
+                         <div>
+                       <span style={{ color: 'red' }}>Welcome, {username}</span>
+                       <button type="button" onClick={handleSignOut}>Sign Out</button>
+                       </div>
                     ) : (
                         <Link to="/signup">
                             <button type="button" className="signup">

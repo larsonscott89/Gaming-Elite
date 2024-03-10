@@ -5,24 +5,35 @@ import GameDetails from "./GameDetails"
 import Accessories from "./Accessories"
 import SearchResults from "./SearchResults"
 import UserSignup from "./UserSignup"
-
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import UserLogin from "./UserLogin"
 import Cart from './Cart'
+import Header from "./Header"
+
 export default function Main (){
+
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [username, setUsername] = useState('');
     return(
 <div>
+               
+            <div >
+                <Header loggedIn={loggedIn} username={username} setLoggedIn={setLoggedIn}/>
+            </div>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home loggedIn={loggedIn}/>} />
                 <Route path="/games" element={<Games />} />
                 <Route path="/games/:id" element={<GameDetails />} />
                 <Route path="/consoles" element={<Consoles />} />
                 <Route path="/accessories" element={<Accessories />} />
                 <Route path="/searchResults" element={<SearchResults />} />
                 <Route path="/Signup" element={<UserSignup />} />
-                <Route path="/login" element={<UserLogin />} />
+                <Route path="/login" element={<UserLogin setLoggedIn={setLoggedIn} setUsername={setUsername}  />} />
                 <Route path="/cart" element={<Cart />} />
             </Routes>
+           
+           
         </div>
 
 
