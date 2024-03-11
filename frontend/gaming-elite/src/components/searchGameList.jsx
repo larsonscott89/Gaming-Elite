@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const SearchGameList = ({ games }) => {
   return (
     <div>
-      {games.map(game => (
+      {Array.isArray(games)&&games.map(game => (
         <div key={game._id}>
           <h3>{game.title}</h3>
           <p>Genre: {game.genre}</p>

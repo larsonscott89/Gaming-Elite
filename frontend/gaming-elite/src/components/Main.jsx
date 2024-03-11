@@ -27,7 +27,7 @@ export default function Main (){
             <Routes>
                 <Route path="/" element={< Home loggedIn={loggedIn}/>} />
                 <Route path="/games" element={<Games />} />
-                <Route path="/games/:id" element={<GameDetails />} />
+                <Route path="/games/:id" element={<GameDetails  userId={userId} />} />
                 <Route path="/consoles" element={<Consoles />} />
                 <Route path="/accessories" element={<Accessories />} />
                 <Route path="/searchResults" element={<SearchResults searchTerm={searchTerm} searchType={searchType} />} />
