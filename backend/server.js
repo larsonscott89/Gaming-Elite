@@ -21,7 +21,12 @@ app.use(logger('dev'))
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
-
+app.get('/', async (req,res) => {
+  res.send("Welcome to my Not So Best Buy!")
+})
+//for search
+app.get('/games/search', gameController.searchGame)
+app.get('/consoles/search', consoleController.searchConsole)
 // create
 app.post('/users/signup', userController.userSignup)
 app.post('/users/login', userController.userLogin)
@@ -35,8 +40,13 @@ app.get('/brands/:id', brandController.getBrandById)
 app.get('/brands', brandController.getBrand)
 app.get('/consoles/:id', consoleController.getConsoleById)
 app.get('/consoles', consoleController.getConsole)
+
 app.get('/games/:id', gameController.getGameById)
 app.get('/games', gameController.getGame)
+
+
+app.get('/games/consoles/:id', consoleController.getGameConsoleById)
+
 app.get('/users/:id', userController.getUserById)
 app.get('/users', userController.getUser)
 

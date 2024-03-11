@@ -56,11 +56,36 @@ const deleteConsole = async (req, res) => {
       return res.status(500).send(error.message)
   }
 }
+const searchConsole = async (req, res) => {
+  try {
+    const searchTerm = req.query.search;
+
+    const consoles = await Console.find(); // Use the appropriate method to fetch console data from your database
+    // Filter the consoles based on the search term
+    const filteredConsoles = consoles.filter(console => console.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    res.json(filteredConsoles);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+const getGameConsoleById = async (req,res) => {
+  try {
+      const console = await Consoles.findById(req.params.id).populate()
+      if (console) {
+          res.json(console)
+      }
+  } catch (error) {
+      return res.status(500).send('Collection with the specified ID does not exists');
+  }
+}
 
 module.exports = {
   getConsole,
   createConsole,
   updateConsole,
   deleteConsole,
-  getConsoleById
+  getConsoleById,
+  searchConsole,
+  getGameConsoleById
 }
