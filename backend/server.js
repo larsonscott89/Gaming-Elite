@@ -6,6 +6,7 @@ const gameController = require('./controllers/games')
 const consoleController = require('./controllers/consoles')
 const brandController = require('./controllers/brands')
 const userController = require('./controllers/user')
+const bannerAdController = require('./controllers/bannerAdController')
 const { getCartItems, getCartItemById, createCartItem, updateCartItem, deleteCartItem, getCartItemsInShoppingCart } = require('./controllers/cartItemController');
 const { getShoppingCarts, getShoppingCartById, createShoppingCart, updateShoppingCart, deleteShoppingCart, getUserShoppingCart } = require('./controllers/shoppingCartController');
 const { getAccessory, getAccessoryById, createAccessory, updateAccessory, deleteAccessory} = require('./controllers/accessoryController');
@@ -49,6 +50,8 @@ app.get('/games/consoles/:id', consoleController.getGameConsoleById)
 
 app.get('/users/:id', userController.getUserById)
 app.get('/users', userController.getUser)
+
+app.get('/bannerAds', bannerAdController.getBannerAds)
 
 // update
 app.put('/users/:id/update', userController.updateUser)

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const { Schema } = require("mongoose");
 
-const BannerAd = new Schema(
+
+const bannerAdSchema = new mongoose.Schema(
     {
         image_path: {type: String, required: true},
         size: {type: String, required: true}
@@ -9,4 +9,4 @@ const BannerAd = new Schema(
     { timestamps: true }
 )
 
-module.exports =  BannerAd
+module.exports = mongoose.model('BannerAd', bannerAdSchema)
