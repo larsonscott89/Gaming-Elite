@@ -23,6 +23,8 @@ useEffect(() => {
             if (searchType === 'games') {
                 const gamesResponse = await axios.get(`http://localhost:3001/games/search?search=${searchTerm}`);
                 setGames(gamesResponse.data);
+                consoles.log(searchTerm)
+              
             }else if (searchType === 'consoles') {
             const consolesResponse = await axios.get(`http://localhost:3001/consoles/search?search=${searchTerm}`);
             setConsoles(consolesResponse.data);
@@ -40,6 +42,7 @@ useEffect(() => {
     } else {
         setGames([]);
         setConsoles([]);
+        
     }
 }, [searchTerm,searchType]);
 
@@ -47,6 +50,7 @@ return (
     <div>
         <Header setSearchTerm={setSearchTerm} setSearchType={setSearchType}/>
         <SearchGameList games={games} />
+       
         <SearchConsoleList consoles={consoles} />
         <h1>Search Results</h1>
         {loading && <p>Loading...</p>}
