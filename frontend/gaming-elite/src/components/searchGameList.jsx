@@ -11,7 +11,7 @@ const SearchGameList = ({ games }) => {
           <p>Price: {game.price}</p>
           <p>Quantity: {game.quantity}</p>
           <p>Number of Players: {game.number_of_players}</p>
-          <p>Online: {game.online ? 'Yes' : 'No'}</p>
+          <p>Online: {game.online}</p>
           <p>Rating: {game.rating}</p>
           <img src={game.img_path} alt={game.title} style={{ width: '100px', height: '100px' }} />
         </div>
