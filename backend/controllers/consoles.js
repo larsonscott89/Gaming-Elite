@@ -21,6 +21,17 @@ const getConsole = async (req, res) => {
   }
 }
 
+const getConsoleById = async (req,res) => {
+  try {
+      const console = await Consoles.findById(req.params.id).populate()
+      if (console) {
+          res.json(console)
+      }
+  } catch (error) {
+      return res.status(500).send('Collection with the specified ID does not exists');
+  }
+}
+
 const updateConsole = async (req, res) => {
   try {
     let { id } = req.params
@@ -50,5 +61,6 @@ module.exports = {
   getConsole,
   createConsole,
   updateConsole,
-  deleteConsole
+  deleteConsole,
+  getConsoleById
 }

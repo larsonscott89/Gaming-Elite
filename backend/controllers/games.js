@@ -21,6 +21,17 @@ const getGame = async (req, res) => {
   }
 }
 
+const getGameById = async (req,res) => {
+  try {
+      const game = await Games.findById(req.params.id).populate()
+      if (game) {
+          res.json(game)
+      }
+  } catch (error) {
+      return res.status(500).send('Collection with the specified ID does not exists');
+  }
+}
+
 const updateGame = async (req, res) => {
   try {
     let { id } = req.params
@@ -51,5 +62,6 @@ module.exports = {
   getGame,
   createGame,
   updateGame,
-  deleteGame
+  deleteGame,
+  getGameById
 }
