@@ -1,5 +1,5 @@
 const db= require('../db/index')
-const {BannerAd}= require('../models')
+const BannerAd = require('../models/bannerAds')
 
 // Connect to the database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
