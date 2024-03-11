@@ -31,8 +31,11 @@ app.post('/consoles', consoleController.createConsole)
 app.post('/users/create', userController.createUser)
 
 // read
+app.get('/brands/:id', brandController.getBrandById)
 app.get('/brands', brandController.getBrand)
+app.get('/consoles/:id', consoleController.getConsoleById)
 app.get('/consoles', consoleController.getConsole)
+app.get('/games/:id', gameController.getGameById)
 app.get('/games', gameController.getGame)
 app.get('/users/:id', userController.getUserById)
 app.get('/users', userController.getUser)

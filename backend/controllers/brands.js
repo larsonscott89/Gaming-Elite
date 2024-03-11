@@ -21,6 +21,17 @@ const getBrand = async (req, res) => {
   }
 }
 
+const getBrandById = async (req,res) => {
+  try {
+      const brand = await Brands.findById(req.params.id).populate()
+      if (brand) {
+          res.json(brand)
+      }
+  } catch (error) {
+      return res.status(500).send('Collection with the specified ID does not exists');
+  }
+}
+
 const updateBrand = async (req, res) => {
   try {
     let { id } = req.params
@@ -50,5 +61,6 @@ module.exports = {
   getBrand,
   createBrand,
   updateBrand,
-  deleteBrand
+  deleteBrand,
+  getBrandById
 }
