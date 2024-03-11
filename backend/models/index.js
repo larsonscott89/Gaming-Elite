@@ -9,7 +9,7 @@ const cartItemSchema = require('./cartItem');
 const categorySchema = require('./category');
 const accessorySchema = require('./accessories');
 
-const Brand = mongoose.model('Brand', brandSchema);
+const Brands = mongoose.model('Brand', brandSchema);
 const Consoles = mongoose.model('Consoles', consolesSchema);
 const Games = mongoose.model('Games', gamesSchema);
 const User = mongoose.model('User', userSchema);
@@ -19,7 +19,7 @@ const ShoppingCart = mongoose.model('ShoppingCart', shoppingCartSchema)
 const Accessory = mongoose.model('accessories', accessorySchema)
 
 module.exports = {
-    Brand,
+    Brands,
     Consoles,
     Games,
     User,
