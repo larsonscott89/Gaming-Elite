@@ -30,7 +30,7 @@ export default function Main (){
                 <Route path="/searchResults" element={<SearchResults />} />
                 <Route path="/Signup" element={<UserSignup />} />
                 <Route path="/login" element={<UserLogin setLoggedIn={setLoggedIn} setUsername={setUsername}  />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/cart" element={<Cart  loggedIn={loggedIn} username={username}/>} />
             </Routes>
            
            
