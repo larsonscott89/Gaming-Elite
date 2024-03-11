@@ -10,7 +10,7 @@ const Games = new Schema(
         year_released: {type: Number, required: true},
         description: {type: String, required: true},
         img_path: {type: String, required: true},
-        number_of_players: {type: Number, required: true},
+        number_of_players: {type: String, required: true},
         online: {type: Boolean, default: false},
         price: {type: Number, required: true},
         rating: {type: String, required: true},
