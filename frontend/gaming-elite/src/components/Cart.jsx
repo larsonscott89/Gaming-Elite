@@ -2,31 +2,42 @@ import  { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-const ShoppingCart = () => {
+const ShoppingCart = ({ userId,username }) => {
     const [user, setUser] = useState(null);
     const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const userId = '65eb7d35b789d170f22f88ad'; 
-                const userResponse = await axios.get(`http://localhost:3001/users/${userId}`);
-                setUser(userResponse.data);
+                // Check if the user is logged in
+                if (userId) {
+                    const userResponse = await axios.get(`http://localhost:3001/users/${userId}`);
+                    setUser(userResponse.data);
 
-                const shoppingCartResponse = await axios.get(`http://localhost:3001/users/${userId}/shopping-cart`);
-                const cartItemsResponse = await axios.get(`http://localhost:3001/users/${userId}/shopping-cart/items`);
+                    const shoppingCartResponse = await axios.get(`http://localhost:3001/users/${userId}/shopping-cart`);
+                    const cartItemsResponse = await axios.get(`http://localhost:3001/users/${userId}/shopping-cart/items`);
 
-                setCartItems(cartItemsResponse.data);
+                    setCartItems(cartItemsResponse.data);
+                } else {
+                    setUser(null);
+                    setCartItems([]);
+                }
             } catch (error) {
                 console.error('Error occurred:', error);
             }
         };
 
         fetchData();
-    }, []);
-
+    }, [userId,username]);
     const renderCartItems = () => {
         const groupedItems = {};
+    
+        // Check if cartItems is an array
+        if (!Array.isArray(cartItems)) {
+            return null; // or handle the case where cartItems is not an array
+        }
+    
+        // Group cart items by type
         cartItems.forEach((item) => {
             if (!groupedItems[item.type]) {
                 groupedItems[item.type] = [];
@@ -53,8 +64,6 @@ const ShoppingCart = () => {
             </div>
         ));
     };
-    
-
     return (
         <div>
             <h1>Shopping Cart</h1>
