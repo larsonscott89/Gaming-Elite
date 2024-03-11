@@ -14,18 +14,26 @@ export default function Header({ setSearchTerm, setSearchType, loggedIn, usernam
         event.preventDefault();
         setSearchTerm(search);
     };
+    const handleSearchTypeChange = (event) => {
+        setSearchType(event.target.value);
+    };
+
     const handleSignOut = () => {
         setLoggedIn(false);
     };
     return (
         <div>
             <div className="title-and-buttons">
-                <Link to="/home">
+                <Link to="/">
                     <h1>Gaming Elite</h1>
                 </Link>
                 <div className="search-bar">
                     <form onSubmit={handleSubmit}>
                         <input type="text" value={search} onChange={handleChange} placeholder="Search..." />
+                        <select onChange={handleSearchTypeChange}>
+                        <option value="games">Game</option>
+                        <option value="consoles">Console</option>
+            </select>
                         <button type="submit">Search</button>
                     </form>
                 </div>
