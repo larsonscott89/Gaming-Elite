@@ -1,5 +1,6 @@
 import Home from "./Home"
 import Consoles from "./Consoles"
+import ConsoleDetails from "./ConsoleDetails"
 import Games from "./Games"
 import GameDetails from "./GameDetails"
 import Accessories from "./Accessories"
@@ -27,7 +28,11 @@ export default function Main (){
             <Routes>
                 <Route path="/" element={< Home loggedIn={loggedIn}/>} />
                 <Route path="/games" element={<Games />} />
+
                 <Route path="/games/:id" element={<GameDetails  userId={userId} />} />
+
+                <Route path="/consoles/:id" element={<ConsoleDetails />} />
+
                 <Route path="/consoles" element={<Consoles />} />
                 <Route path="/accessories" element={<Accessories />} />
                 <Route path="/searchResults" element={<SearchResults searchTerm={searchTerm} searchType={searchType} />} />
