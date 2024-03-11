@@ -17,12 +17,13 @@ export default function Main (){
     const [loggedIn, setLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
     const [userId, setUserId] = useState('');
-   
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchType, setSearchType] = useState('');
     return(
 <div>
                
             <div >
-                <Header loggedIn={loggedIn} username={username} setLoggedIn={setLoggedIn} />
+                <Header loggedIn={loggedIn} username={username} setLoggedIn={setLoggedIn} setSearchTerm={setSearchTerm} setSearchType={setSearchType} />
             </div>
             <Routes>
                 <Route path="/" element={< Home loggedIn={loggedIn}/>} />
@@ -31,7 +32,7 @@ export default function Main (){
                 <Route path="/consoles/:id" element={<ConsoleDetails />} />
                 <Route path="/consoles" element={<Consoles />} />
                 <Route path="/accessories" element={<Accessories />} />
-                <Route path="/searchResults" element={<SearchResults  />} />
+                <Route path="/searchResults" element={<SearchResults searchTerm={searchTerm} searchType={searchType} />} />
                 <Route path="/signup" element={<UserSignup />} />
                 <Route path="/login" element={<UserLogin setLoggedIn={setLoggedIn} setUsername={setUsername}  setUserId={setUserId}/>} />
                 <Route path="/cart" element={<Cart  userId={userId} username={username}/>} />

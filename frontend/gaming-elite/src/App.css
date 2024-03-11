@@ -109,13 +109,73 @@ span {
     color: #555;
 }
 
+/* -------- FOOTER---------- */
+
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
+    background-color: #F1F1F1;
+    color: black;
     padding: 10px 0;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.project-github {
+    text-align: center;
+    margin-right: -100px;
+}
+
+.project-github h4 {
+   margin: 0;
+   margin-bottom: 5px;
+   font-size: .8em;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+   
+ 
+    /* background-color: red; */
+    width: 40%;
+    margin: 10px -100px;
+    
+}
+.team-container h3 {
+    margin: 0; 
+    margin-bottom: 15px;
+    font-size: 1em;
+
+}
+.team-container h4 {
+    margin: 0; 
+    margin-bottom: 5px;
+    font-size: .8em;
+}
+
+.team-members-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: green; */
+    
+    
+    
+}
+.divider {
+    border-left: 1px solid #ccc;
+    height: 80px; 
+    margin: 0;
+   
+  }
+.copyright {
+    margin-left: -100px;
+    font-size: .8em;
+
 }

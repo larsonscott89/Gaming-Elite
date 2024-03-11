@@ -12,7 +12,9 @@ export default function Header({ setSearchTerm, setSearchType, loggedIn, usernam
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log('Search term:', search);
         setSearchTerm(search);
+        console.log('New search term:', search);
     };
     const handleSearchTypeChange = (event) => {
         setSearchType(event.target.value);
