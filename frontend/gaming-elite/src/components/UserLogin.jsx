@@ -34,16 +34,18 @@ const UserLogin = ({ setLoggedIn ,setUsername,setUserId }) => {
             if (!response.ok) {
                 throw new Error('Login failed');
             }
+            const data = await response.json(); // Parse the response JSON data
             alert('Login successful');
             setLoggedIn(true); // Call setLoggedIn here
             setUsername(user.username); // Use user.username
-            setUserId(user.userId);
+            setUserId(data.userId); // Use the user ID from the response
             navigate('/'); // Navigate to the home page
         } catch (error) {
             console.error('Error logging in:', error.message);
             alert('Login failed');
         }
     };
+    
 
     const handleCancel = () => {
         setUser({
