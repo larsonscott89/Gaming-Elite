@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const UserLogin = ({ setLoggedIn ,setUsername }) => {
+const UserLogin = ({ setLoggedIn ,setUsername,setUserId }) => {
     const [user, setUser] = useState({
         username: '',
         password: '',
       
     });
+
     const navigate = useNavigate();
     
 
@@ -36,6 +37,7 @@ const UserLogin = ({ setLoggedIn ,setUsername }) => {
             alert('Login successful');
             setLoggedIn(true); // Call setLoggedIn here
             setUsername(user.username); // Use user.username
+            setUserId(user.userId);
             navigate('/'); // Navigate to the home page
         } catch (error) {
             console.error('Error logging in:', error.message);

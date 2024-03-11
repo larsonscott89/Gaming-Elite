@@ -15,6 +15,7 @@ export default function Main (){
 
     const [loggedIn, setLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
+    const [userId, setUserId] = useState('');
     return(
 <div>
                
@@ -29,8 +30,8 @@ export default function Main (){
                 <Route path="/accessories" element={<Accessories />} />
                 <Route path="/searchResults" element={<SearchResults />} />
                 <Route path="/Signup" element={<UserSignup />} />
-                <Route path="/login" element={<UserLogin setLoggedIn={setLoggedIn} setUsername={setUsername}  />} />
-                <Route path="/cart" element={<Cart  loggedIn={loggedIn} username={username}/>} />
+                <Route path="/login" element={<UserLogin setLoggedIn={setLoggedIn} setUsername={setUsername}  setUserId={setUserId}/>} />
+                <Route path="/cart" element={<Cart  userId={userId} username={username}/>} />
             </Routes>
            
            
