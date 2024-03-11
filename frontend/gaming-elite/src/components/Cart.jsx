@@ -2,7 +2,7 @@ import  { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-const ShoppingCart = ({ loggedIn , username }) => {
+const ShoppingCart = ({ userId,username }) => {
     const [user, setUser] = useState(null);
     const [cartItems, setCartItems] = useState([]);
 
@@ -10,8 +10,7 @@ const ShoppingCart = ({ loggedIn , username }) => {
         const fetchData = async () => {
             try {
                 // Check if the user is logged in
-                if (loggedIn) {
-                    const userId = '65ede758ba9399255b20c838'; // Set the user ID based on your application logic
+                if (userId) {
                     const userResponse = await axios.get(`http://localhost:3001/users/${userId}`);
                     setUser(userResponse.data);
 
@@ -29,8 +28,7 @@ const ShoppingCart = ({ loggedIn , username }) => {
         };
 
         fetchData();
-    }, [loggedIn, username]); 
-
+    }, [userId,username]);
     const renderCartItems = () => {
         const groupedItems = {};
     
