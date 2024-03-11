@@ -57,11 +57,26 @@ const deleteGame = async (req, res) => {
   }
 }
 
+const searchGame = async (req, res) => {
+  try {
+    const searchTerm = req.query.search;
+    if (!searchTerm) {
+      throw new Error('Search term is required');
+    }
+
+    const filteredGames = await Games.find({ title: { $regex: searchTerm, $options: 'i' } });
+    res.json(filteredGames);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
 
 module.exports = {
   getGame,
   createGame,
   updateGame,
   deleteGame,
-  getGameById
+  getGameById,
+  searchGame
 }
