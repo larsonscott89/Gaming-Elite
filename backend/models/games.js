@@ -14,6 +14,7 @@ const Games = new Schema(
         online: {type: Boolean, default: false},
         price: {type: Number, required: true},
         rating: {type: String, required: true},
+        rating_img: {type:String, required: false}
     }
 )
 
