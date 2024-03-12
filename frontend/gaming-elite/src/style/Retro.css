@@ -1,10 +1,10 @@
 .retro-game{
-  font-family: redpixel;
+  font-family: "Press Start 2P", system-ui;
   padding-top: 170px;
 }
 
 .retro-console {
-  font-family: redpixel;
+  font-family: "Press Start 2P", system-ui;
 }
 
 .retro-card {
@@ -50,7 +50,7 @@
 }
 
 .retro-game-description {
-  font-family: redpixel;
+  font-family: "Press Start 2P", system-ui;
   font-size: 36px;
 }
 
