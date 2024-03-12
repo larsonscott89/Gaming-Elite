@@ -30,7 +30,7 @@ export default function Retro() {
 
   return (
     <div>
-      <h1 className='retro-game'> Games </h1>
+      <h1 className='retro-game'> Retro Games </h1>
       <div className="retro-card">
         {game.map((game, index) => (
           game.year_released <= 1995 && (
