@@ -41,6 +41,7 @@ export default function RetroConsoleDetails () {
       <h3> Brand {console.brand}</h3>
       <h2> ${console.price}</h2>
       <button onClick={addToCart}>Add to Cart</button>
+      <Link className='return-link' to="/retro"> Pixelate! </Link>
     </div>
     )
 }
