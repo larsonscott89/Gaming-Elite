@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "../style/GamesByPlatform.css";
 
 import axios from "axios";
 
@@ -53,26 +54,31 @@ export default function GamesByPlatform() {
   console.log(pick1RandomAd());
 
   return (
-    <div>
-      <div className="ads">
-        {pick1RandomAd().map((ad, index) => (
-          <div className="ad-card" key={index}>
-            <img src={ad.image_path} alt="" />
+    <div className="games-page-container">
+      <div className="top-ad-section">
+        <div className="top-ad-container">
+          {pick1RandomAd().map((ad, index) => (
+            <div className="ad-card" key={index}>
+              <img className="ad-image" src={ad.image_path} alt="" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="games-container">
+        <div className="cards-container">
+        {games.map((game, index) => (
+          <div
+            className="game-card"
+            key={game._id}
+            onClick={() => showGame(game._id)}
+          >
+            <img className="game-image" src={game.img_path} alt="" />
+            <h1>{game.title}</h1>
+            <h3>${game.price}</h3>
           </div>
         ))}
-      </div>
-
-      {games.map((game, index) => (
-        <div
-          className="game-card"
-          key={game._id}
-          onClick={() => showGame(game._id)}
-        >
-          <img className="game-image" src={game.img_path} alt="" />
-          <h1>{game.title}</h1>
-          <h3>{game.price}</h3>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
