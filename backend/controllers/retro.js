@@ -1,4 +1,4 @@
-const {Games} = require('../models')
+const Retro = require('../models')
 
 const getRetro = async (req, res) => {
   try {
