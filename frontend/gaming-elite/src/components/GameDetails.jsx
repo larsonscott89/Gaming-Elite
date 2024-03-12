@@ -56,7 +56,13 @@ export default function GameDetails ({ userId }) {
                     <h4 className="game-description">{game.description}</h4>
                     <h3 className="general-title">General</h3>
                     <h4 className="game-playres"> Number of Players: <span className="player-number">{game.number_of_players}</span></h4>
-                    <h4 className="game-online"> Online capabilities: <span className="online-boolean">{game.online}</span></h4>
+                    {/* <h4 className="game-online"> Online capabilities: <span className="online-boolean">{game.online}</span></h4> */}
+                    <div>
+                        {game.online ? (
+                            <h4>Online capabilities: <span className="online-boolean">Yes</span></h4>
+                        ):
+                        <h4>Online capabilities: <span className="online-boolean">No</span></h4>}
+                    </div>
                 </div>
             </div>
         </div>
