@@ -1,3 +1,13 @@
+.signup-page-container {
+  padding-top: 155px;
+  padding-bottom:155px;
+}
+
+.login-page-container {
+  padding-top: 155px;
+  padding-bottom: 402px;
+}
+
 button,
 input {
   border: none;
