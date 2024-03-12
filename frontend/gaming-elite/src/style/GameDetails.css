@@ -65,6 +65,9 @@
     .rating-img {
       width: 50px;
     }
+    .details-section button{
+      font-weight: 700;
+    }
 
 .description-container{
   width: 70%;
