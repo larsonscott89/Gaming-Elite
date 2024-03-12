@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import '../style/Games.css'
+import "../style/Games.css";
 
 export default function Games() {
   const [games, setGames] = useState([]);
   const [consoles, setConsoles] = useState([]);
+
+  const [ads, setAds] = useState([]);
 
   const navigate = useNavigate();
   let showItem = (id) => {
@@ -32,7 +34,19 @@ export default function Games() {
       setConsoles(response.data);
     };
     getConsoles();
+
+    const getAds = async () => {
+      const adResponse = await axios.get("http://localhost:3001/bannerAds");
+      setAds(adResponse.data);
+    };
+
+    getAds();
   }, []);
+
+  const pick1RandomAd = () => {
+    const shuffledArray = ads.sort(() => 0.5 - Math.random());
+    return shuffledArray.slice(0, 1);
+  };
 
   const mainConsoles = [];
 
@@ -59,18 +73,25 @@ export default function Games() {
 
   return (
     <div className="games-page-container">
-      <div className="random-games-container">
-        <div className="random-cards-container">
-        {pick2RandomItems().map((game, index) => (
-          <div
-            className="game-card"
-            key={game._id}
-            onClick={() => showGame(game._id)}
-          >
-            <img className="random-game-image" src={game.img_path} alt="" />
-            <h3>{game.title}</h3>
+      <div className="ads">
+        {pick1RandomAd().map((ad, index) => (
+          <div className="ad-card" key={index}>
+            <img src={ad.image_path} alt="" />
           </div>
         ))}
+      </div>
+      <div className="random-games-container">
+        <div className="random-cards-container">
+          {pick2RandomItems().map((game, index) => (
+            <div
+              className="game-card"
+              key={game._id}
+              onClick={() => showGame(game._id)}
+            >
+              <img className="random-game-image" src={game.img_path} alt="" />
+              <h3>{game.title}</h3>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -82,8 +103,8 @@ export default function Games() {
               className="platform-card"
               key={item._id}
               onClick={() => showItem(item._id)}
-              >
-              <img className="platform-image"  src={item.img_path} alt="" />
+            >
+              <img className="platform-image" src={item.img_path} alt="" />
               <h3>{item.name}</h3>
             </div>
           ))}
@@ -93,16 +114,16 @@ export default function Games() {
       <div className="suggested-games-container">
         <h3>Suggested Games</h3>
         <div className="suggested-cards-container">
-        {pick5RandomItems().map((game, index) => (
-          <div
-            className="game-card"
-            key={game._id}
-            onClick={() => showGame(game._id)}
-          >
-            <img className="suggested-image" src={game.img_path} alt="" />
-            <h3>{game.title}</h3>
-          </div>
-        ))}
+          {pick5RandomItems().map((game, index) => (
+            <div
+              className="game-card"
+              key={game._id}
+              onClick={() => showGame(game._id)}
+            >
+              <img className="suggested-image" src={game.img_path} alt="" />
+              <h3>{game.title}</h3>
+            </div>
+          ))}
         </div>
       </div>
     </div>
