@@ -13,7 +13,6 @@ export default function RetroGameDetails () {
     const getGame = async () => {
         const response = await axios.get(`http://localhost:3001/games/${id}`)
         setGame(response.data)
-        console.log(response.data)
     }
     getGame()
 }, [id])
