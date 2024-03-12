@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import '../style/Retro.css'
 
 export default function Retro() {
   const [game, setGame] = useState([])
   const [consoles, setConsoles] = useState([])
+
+  const navigate = useNavigate();
+  let showItem = (id) => {
+    navigate(`consoles/${id}`);
+  };
+
+  let showGame = (id) => {
+    navigate(`${id}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +35,8 @@ export default function Retro() {
       <div className="details-card">
         {game.map((game, index) => (
           game.year_released <= 1995 && (
-            <div key={game._id}>
+            <div key={game._id}
+                  onClick={() => showGame(game._id)}>
               <h1>{game.title}</h1>
               <img className='game-cover' src={game.img_path} alt="" />
               <h2>${game.price}</h2>
@@ -37,7 +48,8 @@ export default function Retro() {
       <div className="details-card">
         {consoles.map((console, index) => (
           console.year_released <= 1995 && (
-          <div key={console._id}>
+          <div key={console._id}
+          onClick={() => showItem(item._id)}>
             <h1>{console.name}</h1>
             <img className='console-cover' src={console.img_path} alt="" />
             <h2>${console.price}</h2>
