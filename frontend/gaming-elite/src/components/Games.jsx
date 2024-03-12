@@ -73,12 +73,15 @@ export default function Games() {
 
   return (
     <div className="games-page-container">
-      <div className="ads">
+      <div className="top-ad-section">
+        <div className="top-ad-container">
         {pick1RandomAd().map((ad, index) => (
           <div className="ad-card" key={index}>
-            <img src={ad.image_path} alt="" />
+            <img className="ad-image" src={ad.image_path} alt="" />
           </div>
+          
         ))}
+        </div>
       </div>
       <div className="random-games-container">
         <div className="random-cards-container">

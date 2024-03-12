@@ -211,6 +211,7 @@ span {
 /* -------- FOOTER---------- */
 
 footer {
+    
     font-family:  Helvetica, sans-serif;
     background-color: #F1F1F1;
     color: black;
@@ -222,6 +223,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .project-github {

@@ -48,14 +48,15 @@ export default function Consoles() {
 
   return (
     <div className="games-page-container">
-      <div className="ads">
-        {pick1RandomAd().map((ad, index) => (
-          <div className="ad-card" key={index}>
-            <img src={ad.image_path} alt="" />
-          </div>
-        ))}
-      </div>
-
+      <div className="top-ad-section">
+        <div className="top-ad-container">
+          {pick1RandomAd().map((ad, index) => (
+            <div className="ad-card" key={index}>
+              <img className="ad-image" src={ad.image_path} alt="" />
+            </div>
+          ))}
+        </div>
+      </div>    
       <div className="platforms-container">
         <h3>Browse Consoles for Sale</h3>
         <div className="platform-cards-container">
