@@ -1,7 +1,7 @@
 /* ----------HEADER---------- */
 @font-face {
-    font-family: redpixel;
-    src: url('src/stlye/retro-fonts-font-collection/Redpixel-8Mqz2.ttf') format('truetype');
+    font-family: 'RedPixel';
+    src: url('https/www.fontspace.com/collection/retro-fonts-cw2o0qd.otf/subset-RedPixelRegular.ttf') format('truetype');
   }
 
 .header {
