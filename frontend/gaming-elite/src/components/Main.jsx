@@ -39,7 +39,7 @@ export default function Main (){
                 <Route path="/consoles/:id" element={<ConsoleDetails />} />
                 <Route path="/retro" element={<Retro/>}/>
                 <Route path="/retro/:id" element={<RetroGameDetails/>}/>
-                <Route path="/retro/:id" element={<RetroConsoleDetails/>}/>
+                <Route path="/retro/console/:id" element={<RetroConsoleDetails/>}/>
                 <Route path="/games/consoles/:id" element={<GamesByPlatform/>}/>
 
                 <Route path="/consoles" element={<Consoles />} />

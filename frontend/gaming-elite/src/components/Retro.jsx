@@ -10,8 +10,8 @@ export default function Retro() {
   const [consoles, setConsoles] = useState([])
 
   const navigate = useNavigate();
-  let showItem = (id) => {
-    navigate(`consoles/${id}`);
+  let showConsole = (id) => {
+    navigate(`/retro/console/${id}`);
   };
 
   let showGame = (id) => {
@@ -49,7 +49,7 @@ export default function Retro() {
         {consoles.map((console, index) => (
           console.year_released <= 1995 && (
           <div key={console._id}
-          onClick={() => showItem(item._id)}>
+                onClick={() => showConsole(console._id)}>
             <h1>{console.name}</h1>
             <img className='console-cover' src={console.img_path} alt="" />
             <h2>${console.price}</h2>
