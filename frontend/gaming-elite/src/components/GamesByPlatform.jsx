@@ -64,7 +64,7 @@ export default function GamesByPlatform() {
   return (
     <div className="games-page-container">
       <h1></h1>
-      <div className="top-ad-section">
+      <div className="consoles-top-ad-section">
         <div className="top-ad-container">
           {pick1RandomAd().map((ad, index) => (
             <div className="ad-card" key={index}>
@@ -73,21 +73,25 @@ export default function GamesByPlatform() {
           ))}
         </div>
       </div>
-      {consoleName}
+      
 
       <div className="games-container">
-        <div className="cards-container">
-          {games.map((game, index) => (
-            <div
-              className="game-card"
-              key={game._id}
-              onClick={() => showGame(game._id)}
-            >
-              <img className="game-image" src={game.img_path} alt="" />
-              <h1>{game.title}</h1>
-              <h3>${game.price}</h3>
-            </div>
-          ))}
+        <div className="title-cards-container">
+          <div className="title-container">
+            <h1 className="console-title">{consoleName} Games</h1>
+          </div>
+          <div className="cards-container">
+            {games.map((game, index) => (
+              <div
+                className="game-card"
+                key={game._id}
+                onClick={() => showGame(game._id)}>
+                <img className="game-image" src={game.img_path} alt="" />
+                <h1>{game.title}</h1>
+                <h3>${game.price}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
