@@ -27,19 +27,21 @@ const Header=({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn })
         setLoggedIn(false);
     };
     return (
-        <div>
+        <div className="header">
             <div className="title-and-buttons">
-                <Link to="/">
+                <Link to="/" className="title">
                     <h1>Gaming Elite</h1>
                 </Link>
-                <div className="search-bar">
+                <div className="search-bar-container">
                     <form onSubmit={handleSubmit}>
-                        <input type="text" value={search} onChange={handleChange} placeholder="Search..." />
+                        <input type="text" value={search} onChange={handleChange} placeholder="Search games, consoles, and more" />
                         <select onChange={handleSearchTypeChange}>
-                        <option value="games">Game</option>
-                        <option value="consoles">Console</option>
-                         </select>
-                        <button type="submit">Search</button>
+
+                            <option value="games">Game</option>
+                            <option value="consoles">Console</option>
+                        </select>
+                        <button className="search-button" type="submit">Search</button>
+
                     </form>
                 </div>
                 <div className="top-right-buttons">
@@ -49,26 +51,16 @@ const Header=({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn })
                        <button type="button" onClick={handleSignOut}>Sign Out</button>
                        </div>
                     ) : (
-                        <Link to="/signup">
-                            <button type="button" className="signup">
-                                <img
+                        <Link to="/signup" className="signup-container">
+                                <img className="signup-icon"
                                     src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png"
-                                    alt="login_img"
-                                    style={{ position: 'absolute', top: '-30px', left: '50%', transform: 'translateX(-50%)', width: '50px', height: '30px' }}
-                                />
-                                signup
-                            </button>
+                                    alt="login_img" />
                         </Link>
                     )}
-                    <Link to="/cart">
-                        <button type="button" className="Cart">
-                            <img
+                    <Link to="/cart" className="cart-container">
+                            <img className="cart-icon"
                                 src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png"
-                                alt="Shopping_Cart"
-                                style={{ position: 'absolute', top: '-30px', left: '50%', transform: 'translateX(-50%)', width: '50px', height: '30px' }}
-                            />
-                            Cart
-                        </button>
+                                alt="Shopping_Cart"/>
                     </Link>
                 </div>
             </div>
