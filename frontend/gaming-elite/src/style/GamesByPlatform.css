@@ -12,11 +12,12 @@ body {
     width: 100vw;
     margin: auto;
 }
-.top-ad-section {
+.consoles-top-ad-section {
     display: flex;
-    margin-top: 147px;
+    margin-top: 100px;
     width: 100%;
     background-color: white;
+    margin-bottom: 10px;
 }
     .ad-image {
         width: 100%;
@@ -27,8 +28,22 @@ body {
     justify-content: space-around;
     width: 100%;
     background-color: white;
-    margin-bottom: 10px;
+    padding-bottom: 30px;
 }
+    .title-cards-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .title-container {
+        font-weight: 900;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .console-title {
+        padding: 30px;
+        text-align: left;
+    }
+
     .cards-container {
         display: flex;
         flex-wrap: wrap;
