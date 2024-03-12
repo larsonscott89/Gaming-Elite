@@ -5,6 +5,7 @@ const logger = require('morgan')
 const gameController = require('./controllers/games')
 const consoleController = require('./controllers/consoles')
 const brandController = require('./controllers/brands')
+const retroController = require('./controllers/retro')
 const userController = require('./controllers/user')
 const bannerAdController = require('./controllers/bannerAdController')
 const { getCartItems, getCartItemById, createCartItem, updateCartItem, deleteCartItem, getCartItemsInShoppingCart } = require('./controllers/cartItemController');
@@ -52,6 +53,7 @@ app.get('/users/:id', userController.getUserById)
 app.get('/users', userController.getUser)
 
 app.get('/bannerAds', bannerAdController.getBannerAds)
+app.get('/retro', retroController.getRetro)
 
 // update
 app.put('/users/:id/update', userController.updateUser)
