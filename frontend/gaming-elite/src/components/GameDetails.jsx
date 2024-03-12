@@ -21,9 +21,11 @@ export default function GameDetails ({ userId }) {
     const addToCart = async () => {
         try {
             if (userId) {
-                await axios.post(`http://localhost:3001/users/${userId}/shopping-cart/add`, {
+                await axios.post(`http://localhost:3001/users/${userId}/shopping-cart/items`, {
                     itemId: game._id
+                   
                 })
+                
                 alert("Item added to cart successfully!")
             } else {
                 alert("Please log in to add items to the cart.")

@@ -13,11 +13,12 @@ export default function SearchResults() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        console.log('Search Term:', searchTerm);
         const fetchData = async () => {
             try {
                 setLoading(true);
                 setError(null);
-
+    
                 let response;
                 if (searchType === 'games') {
                     response = await axios.get(`http://localhost:3001/games/search?search=${searchTerm}`);
@@ -33,7 +34,7 @@ export default function SearchResults() {
                 setLoading(false);
             }
         };
-
+    
         if (searchTerm.trim() !== '') {
             fetchData();
         } else {
@@ -41,6 +42,11 @@ export default function SearchResults() {
             setConsoles([]);
         }
     }, [searchTerm, searchType]);
+    
+    
+
+    console.log('Search Term:', searchTerm);
+    console.log('Search Type:', searchType);
 
     return (
         <div>
@@ -53,3 +59,4 @@ export default function SearchResults() {
         </div>
     );
 }
+

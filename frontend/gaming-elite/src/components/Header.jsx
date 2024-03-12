@@ -1,20 +1,23 @@
 import Nav from "./Nav";
 
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Header({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn }) {
+const Header=({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn })=> {
     const [search, setSearch] = useState('');
 
     const handleChange = (event) => {
+        event.preventDefault();
         setSearch(event.target.value);
+       
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Search term:', search);
+        
         setSearchTerm(search);
-        console.log('New search term:', search);
+     
     };
     const handleSearchTypeChange = (event) => {
         setSearchType(event.target.value);
@@ -35,7 +38,7 @@ export default function Header({ setSearchTerm, setSearchType, loggedIn, usernam
                         <select onChange={handleSearchTypeChange}>
                         <option value="games">Game</option>
                         <option value="consoles">Console</option>
-            </select>
+                         </select>
                         <button type="submit">Search</button>
                     </form>
                 </div>
@@ -76,3 +79,4 @@ export default function Header({ setSearchTerm, setSearchType, loggedIn, usernam
     );
 
 }
+export default  Header
