@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import '../style/Retro.css'
@@ -32,26 +30,26 @@ export default function Retro() {
 
   return (
     <div>
-      <div className="details-card">
+      <div className="retro-card">
         {game.map((game, index) => (
           game.year_released <= 1995 && (
             <div key={game._id}
                   onClick={() => showGame(game._id)}>
               <h1>{game.title}</h1>
-              <img className='game-cover' src={game.img_path} alt="" />
+              <img className='retrogame-cover' src={game.img_path} alt="" />
               <h2>${game.price}</h2>
             </div>
           )
         ))}
       </div>
 
-      <div className="details-card">
+      <div className="retro-console-card">
         {consoles.map((console, index) => (
           console.year_released <= 1995 && (
           <div key={console._id}
                 onClick={() => showConsole(console._id)}>
             <h1>{console.name}</h1>
-            <img className='console-cover' src={console.img_path} alt="" />
+            <img className='retro-console-cover' src={console.img_path} alt="" />
             <h2>${console.price}</h2>
           </div>
         )
