@@ -33,7 +33,7 @@ const addToCart = async () => {
 }
 
 return(
-    <div className="details-card">
+    <div className="retro-details-card">
   <h1>{game.title}</h1>
   <img className='game-cover' src={game.img_path} alt="" />
   <h3> Release Year: {game.year_released}</h3>

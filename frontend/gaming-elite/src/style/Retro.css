@@ -1,3 +1,49 @@
+.retro-game{
+  font-family: redpixel;
+  padding-top: 170px;
+}
+
+.retro-console {
+  font-family: redpixel;
+}
+
+.retro-card {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.retro-game-title {
+  display: flex;
+  width: 225px;
+}
+
+.retro-game-price {
+  display: flex;
+}
+
+.retro-game-cover {
+  height: 275px;
+  width: 225px;
+}
+
+.retro-console-card {
+  display: flex;
+}
+
+.retro-console-title {
+  display: flex;
+}
+
+.retro-console-price {
+  display: flex;
+}
+
+.retro-console-cover {
+  height: 275px;
+  width: 225px;
+}
+
 .return-link {
   background-color: black;
 
@@ -6,4 +52,8 @@
 .retro-game-description {
   font-family: redpixel;
   font-size: 36px;
+}
+
+.retro-details-card {
+  padding-top: 140px;
 }
