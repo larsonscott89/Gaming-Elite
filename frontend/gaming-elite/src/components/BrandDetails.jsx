@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../style/GamesByPlatform.css";
+import "../style/BrandDetails.css";
 
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
-import "../style/Games.css";
+
 
 export default function BrandDetails() {
   let { id } = useParams();
@@ -48,7 +48,7 @@ export default function BrandDetails() {
   };
 
   return (
-    <div className="games-page-container">
+    <div className="browse-platforms-page-container">
       <div className="top-ad-section">
         <div className="top-ad-container">
           {pick1RandomAd().map((ad, index) => (
@@ -58,19 +58,22 @@ export default function BrandDetails() {
           ))}
         </div>
       </div>
-      <div className="platforms-container">
-        <h3>Browse by Console</h3>
-        <div className="platform-cards-container">
+      <div className="browse-platforms-container">
+        <div className="browse-title-cards-container">
+          <div className="browse-title-container">
+            <h1 className="browse-title">Browse by Console</h1>
+          </div>
+        <div className="browse-cards-container">
           {consoleBrands.map((item, index) => (
             <div
-              className="platform-card"
+              className="browse-card"
               key={item._id}
-              onClick={() => showItem(item._id)}
-            >
-              <img className="platform-image" src={item.img_path} alt="" />
+              onClick={() => showItem(item._id)}>
+              <img className="browse-image" src={item.img_path} alt="" />
               <h3>{item.name}</h3>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </div>
