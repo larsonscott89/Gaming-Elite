@@ -72,18 +72,44 @@
 }
     .description-title {
       font-size: 1.5em;
+      margin-bottom: -15px;
     }
     .game-description {
       font-size: 1em;
       font-weight: 300;
       line-height: 1.3;
     }
+
+    .general-container{
+      display: flex;
+      flex-direction: column;
+    }
+    .general-info-container{
+      display: flex;
+      flex-direction: row;
+    }
+
+   
+   .general-info hr {
+      border-bottom: 1px solid #f1f1f1;
+      width: 200px; 
+
+   }
+   .general-data hr {
+      border-bottom: 1px solid #f1f1f1;
+      width: 200px; 
+      
+   }
+   .general-info, .general-data {
+    margin-bottom: 20px;
+   }
     .general-title {
       font-size: 1.2em;
+      margin-bottom: -10px;
     }
-    .game-players, .game-online {
+    .game-players, .game-online, .player-number, .online-boolean  {
       font-size: 1em;
-    }
-    .player-number, .online-boolean {
+      margin-bottom: -5px;
       font-weight: 300;
     }
+    

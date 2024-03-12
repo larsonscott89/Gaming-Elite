@@ -17,9 +17,12 @@ margin: auto;
     display: flex;
     margin-top: 147px;
     width: 100%;
-    background-color: white;
+    margin-bottom: 10px;
     
 }
+    .top-ad-container{
+        background-color: #f1f1f1;
+    }
     .ad-image {
         width: 100%;
     }
@@ -33,6 +36,7 @@ width: 100%;
 background-color: white;
 margin-bottom: 10px;
 
+
 }
     .random-cards-container {
         display: flex;
@@ -42,7 +46,7 @@ margin-bottom: 10px;
         width: 70%;
         
     }
-    .random-game-image {
+    .random-game-icon-image {
         max-height: 300px;
     }
 

@@ -54,14 +54,27 @@ export default function GameDetails ({ userId }) {
                 <div className="description-container">
                     <h3 className="description-title">Description</h3>
                     <h4 className="game-description">{game.description}</h4>
-                    <h3 className="general-title">General</h3>
-                    <h4 className="game-playres"> Number of Players: <span className="player-number">{game.number_of_players}</span></h4>
-                    {/* <h4 className="game-online"> Online capabilities: <span className="online-boolean">{game.online}</span></h4> */}
-                    <div>
-                        {game.online ? (
-                            <h4>Online capabilities: <span className="online-boolean">Yes</span></h4>
-                        ):
-                        <h4>Online capabilities: <span className="online-boolean">No</span></h4>}
+                    <div className="general-container">
+                        <h3 className="general-title">General</h3>
+                        <div className="general-info-container">
+                            <div className="general-info">
+                                <h4 className="game-players"> Number of Players</h4>
+                                <hr/>
+                                <h4 className="game-online">Online Multiplayer</h4>
+                                <hr/>
+                            </div>
+                            <div className="general-data">
+                                <h4 className="player-number">{game.number_of_players}</h4>
+                                <hr/>
+                                <div>
+                                    {game.online ? (
+                                        <h4 className="online-boolean">Yes</h4>
+                                    ):
+                                    <h4 className="online-boolean">No</h4>}
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
