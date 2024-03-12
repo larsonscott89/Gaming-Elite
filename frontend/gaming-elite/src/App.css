@@ -1,9 +1,4 @@
 /* ----------HEADER---------- */
-@font-face {
-    font-family: 'RedPixel';
-    src: url('https/www.fontspace.com/collection/retro-fonts-cw2o0qd.otf/subset-RedPixelRegular.ttf') format('truetype');
-  }
-
 .header {
     font-family:  Helvetica, sans-serif;
     display: flex;
@@ -87,8 +82,9 @@ h1 {
 }
 
 .retro-nav {
-    font-family: redpixel;
-    font-size: 26px;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 18px;
+    color: rgb(225, 0, 0);
 }
 
 .nav-items {
