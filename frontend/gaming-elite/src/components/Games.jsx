@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import '../style/Games.css'
 
 export default function Games() {
   const [games, setGames] = useState([]);
@@ -57,48 +58,52 @@ export default function Games() {
   };
 
   return (
-    <div>
-      <div className="random-games">
+    <div className="games-page-container">
+      <div className="random-games-container">
+        <div className="random-cards-container">
         {pick2RandomItems().map((game, index) => (
           <div
             className="game-card"
             key={game._id}
             onClick={() => showGame(game._id)}
           >
-            <img src={game.img_path} alt="" />
+            <img className="random-game-image" src={game.img_path} alt="" />
             <h3>{game.title}</h3>
           </div>
         ))}
+        </div>
       </div>
 
-      <div className="platforms">
+      <div className="platforms-container">
         <h3>Browse Games by Platform</h3>
-        <div className="platform-cards">
+        <div className="platform-cards-container">
           {mainConsoles.map((item, index) => (
             <div
-              className="card"
+              className="platform-card"
               key={item._id}
               onClick={() => showItem(item._id)}
-            >
-              <img src={item.img_path} alt="" />
+              >
+              <img className="platform-image"  src={item.img_path} alt="" />
               <h3>{item.name}</h3>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="suggested-games">
+      <div className="suggested-games-container">
         <h3>Suggested Games</h3>
+        <div className="suggested-cards-container">
         {pick5RandomItems().map((game, index) => (
           <div
             className="game-card"
             key={game._id}
             onClick={() => showGame(game._id)}
           >
-            <img src={game.img_path} alt="" />
+            <img className="suggested-image" src={game.img_path} alt="" />
             <h3>{game.title}</h3>
           </div>
         ))}
+        </div>
       </div>
     </div>
   );
