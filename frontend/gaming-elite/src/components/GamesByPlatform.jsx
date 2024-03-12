@@ -55,6 +55,7 @@ export default function GamesByPlatform() {
 
   return (
     <div className="games-page-container">
+      <h1></h1>
       <div className="top-ad-section">
         <div className="top-ad-container">
           {pick1RandomAd().map((ad, index) => (

@@ -87,11 +87,11 @@ export default function Games() {
         <div className="random-cards-container">
           {pick2RandomItems().map((game, index) => (
             <div
-              className="game-card"
+              className="game-icon"
               key={game._id}
               onClick={() => showGame(game._id)}
             >
-              <img className="random-game-image" src={game.img_path} alt="" />
+              <img className="random-game-icon-image" src={game.img_path} alt="" />
               <h3>{game.title}</h3>
             </div>
           ))}
@@ -119,7 +119,7 @@ export default function Games() {
         <div className="suggested-cards-container">
           {pick5RandomItems().map((game, index) => (
             <div
-              className="game-card"
+              className="game-icon"
               key={game._id}
               onClick={() => showGame(game._id)}
             >
