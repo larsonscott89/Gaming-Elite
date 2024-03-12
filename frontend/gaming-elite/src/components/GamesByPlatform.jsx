@@ -11,6 +11,7 @@ export default function GamesByPlatform() {
   let { id } = useParams();
   const [games, setGames] = useState([]);
   const [ads, setAds] = useState([]);
+  const [consoles, setConsoles] = useState([]);
 
   const navigate = useNavigate();
   let showGame = (gameId) => {
@@ -44,6 +45,12 @@ export default function GamesByPlatform() {
     };
 
     getAds();
+
+    const getConsole = async () => {
+      const response = await axios.get(`http://localhost:3001/consoles/${id}`);
+      setConsoles(response.data);
+    };
+    getConsole();
   }, []);
 
   const pick1RandomAd = () => {
@@ -51,7 +58,8 @@ export default function GamesByPlatform() {
     return shuffledArray.slice(0, 1);
   };
 
-  console.log(pick1RandomAd());
+  let consoleName = consoles.name;
+
 
   return (
     <div className="games-page-container">
@@ -65,19 +73,21 @@ export default function GamesByPlatform() {
           ))}
         </div>
       </div>
+      {consoleName}
+
       <div className="games-container">
         <div className="cards-container">
-        {games.map((game, index) => (
-          <div
-            className="game-card"
-            key={game._id}
-            onClick={() => showGame(game._id)}
-          >
-            <img className="game-image" src={game.img_path} alt="" />
-            <h1>{game.title}</h1>
-            <h3>${game.price}</h3>
-          </div>
-        ))}
+          {games.map((game, index) => (
+            <div
+              className="game-card"
+              key={game._id}
+              onClick={() => showGame(game._id)}
+            >
+              <img className="game-image" src={game.img_path} alt="" />
+              <h1>{game.title}</h1>
+              <h3>${game.price}</h3>
+            </div>
+          ))}
         </div>
       </div>
     </div>
