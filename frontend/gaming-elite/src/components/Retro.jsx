@@ -1,43 +1,50 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
-import axios from "axios";
+import axios from "axios"
 import '../style/Retro.css'
 
-export default function Retro () {
-
-  let { id } = useParams()
-  const [game, setGame] = useState('')
-  const [consoles, setConsoles] = useState([]);
+export default function Retro() {
+  const [game, setGame] = useState([])
+  const [consoles, setConsoles] = useState([])
 
   useEffect(() => {
-    const getGames = async () => {
-      const response = await axios.get(`http://localhost:3001/games`);
+    const fetchData = async () => {
+      const gamesResponse = await axios.get("http://localhost:3001/games")
+      setGame(gamesResponse.data);
 
-      setGame(response.data);
-    };
-    getGames();
+      const consolesResponse = await axios.get("http://localhost:3001/consoles")
+      setConsoles(consolesResponse.data);
+    }
 
-    const getConsoles = async () => {
-      const response = await axios.get("http://localhost:3001/consoles");
-
-      setConsoles(response.data);
-    };
-    getConsoles();
-  }, []);
+    fetchData()
+  }, [])
 
   return (
-    <div className="details-card">
-      <h1>{game.title}</h1>
-      <img className='game-cover' src={game.img_path} alt="" />
-      <h3> Release Year: {game.year_released}</h3>
-      <h3> Genres {game.genre}</h3>
-      <img className='rating-img' src={game.rating_img} alt=''/>
-      <h2> ${game.price}</h2>
-      <h2> Description {game.description}</h2>
-      <h3> Number of Players: {game.number_of_players}</h3>
-      <h3> Online capabilities: {game.online}</h3>
-    <button onClick={addToCart}>Add to Cart</button>
-  </div>
+    <div>
+      <div className="details-card">
+        {game.map((game, index) => (
+          game.year_released <= 1995 && (
+            <div key={game._id}>
+              <h1>{game.title}</h1>
+              <img className='game-cover' src={game.img_path} alt="" />
+              <h2>${game.price}</h2>
+            </div>
+          )
+        ))}
+      </div>
+
+      <div className="details-card">
+        {consoles.map((console, index) => (
+          console.year_released <= 1995 && (
+          <div key={console._id}>
+            <h1>{console.name}</h1>
+            <img className='console-cover' src={console.img_path} alt="" />
+            <h2>${console.price}</h2>
+          </div>
+        )
+        ))}
+      </div>
+    </div>
   )
 }
