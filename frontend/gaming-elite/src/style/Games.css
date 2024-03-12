@@ -2,7 +2,6 @@ body {
     margin: 0;
     position: relative;
     background-color: #f1f1f1;
-    
   }
 
   .games-page-container {
@@ -12,8 +11,6 @@ body {
     align-items: center;
     width: 100vw;
     margin:  auto;
-
-    
   }
 
   .random-games-container {
@@ -22,7 +19,7 @@ body {
     justify-content: space-around;
     width: 100%;
     background-color: white;
-    margin-top: 145px;
+    margin-top: 147px;
   }
         .random-cards-container {
             display: flex;

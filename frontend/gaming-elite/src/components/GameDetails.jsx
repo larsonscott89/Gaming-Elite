@@ -35,17 +35,30 @@ export default function GameDetails ({ userId }) {
 
 
     return(
-        <div className="details-card">
-      <h1>{game.title}</h1>
-      <img className='game-cover' src={game.img_path} alt="" />
-      <h3> Release Year: {game.year_released}</h3>
-      <h3> Genres {game.genre}</h3>
-      <img className='rating-img' src={game.rating_img} alt=''/>
-      <h2> ${game.price}</h2>
-      <h2> Description {game.description}</h2>
-      <h3> Number of Players: {game.number_of_players}</h3>
-      <h3> Online capabilities: {game.online}</h3>
-      <button onClick={addToCart}>Add to Cart</button>
-    </div>
+        <div className="game-details-page">
+            <div className="game-details-container">
+                <div className="top-container">
+                    <div className="image-container">
+                        <img className='game-cover' src={game.img_path} alt="" />
+                    </div>
+                    <div className="details-section">
+                        <h2 className="game-title">{game.title}</h2>
+                        <h2 className="game-price"> ${game.price}</h2>
+                        <h3 className="game-release">Release Year: <span className="year-released">{game.year_released}</span></h3>
+                        <h3 className="genres-title">Genres</h3>
+                        <h3 className="game-genres">{game.genre}</h3>
+                        <img className='rating-img' src={game.rating_img} alt=''/>
+                        <button onClick={addToCart}>Add to Cart</button>
+                    </div>
+                </div>
+                <div className="description-container">
+                    <h3 className="description-title">Description</h3>
+                    <h4 className="game-description">{game.description}</h4>
+                    <h3 className="general-title">General</h3>
+                    <h4 className="game-playres"> Number of Players: <span className="player-number">{game.number_of_players}</span></h4>
+                    <h4 className="game-online"> Online capabilities: <span className="online-boolean">{game.online}</span></h4>
+                </div>
+            </div>
+        </div>
     )
 }
