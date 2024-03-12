@@ -11,6 +11,9 @@ import { Routes, Route } from 'react-router-dom';
 import UserLogin from "./UserLogin"
 import Cart from './Cart'
 import Header from "./Header"
+import Retro from './Retro'
+import GamesByPlatform from './GamesByPlatform'
+
 
 export default function Main (){
 
@@ -21,7 +24,7 @@ export default function Main (){
     const [searchType, setSearchType] = useState('');
     return(
 <div>
-               
+
             <div >
                 <Header loggedIn={loggedIn} username={username} setLoggedIn={setLoggedIn} setSearchTerm={setSearchTerm} setSearchType={setSearchType} />
             </div>
@@ -32,6 +35,8 @@ export default function Main (){
                 <Route path="/games/:id" element={<GameDetails  userId={userId} />} />
 
                 <Route path="/consoles/:id" element={<ConsoleDetails />} />
+                <Route path="/retro" element={<Retro/>}/>
+                <Route path="/games/consoles/:id" element={<GamesByPlatform/>}/>
 
                 <Route path="/consoles" element={<Consoles />} />
                 <Route path="/accessories" element={<Accessories />} />
@@ -40,11 +45,10 @@ export default function Main (){
                 <Route path="/login" element={<UserLogin setLoggedIn={setLoggedIn} setUsername={setUsername}  setUserId={setUserId}/>} />
                 <Route path="/cart" element={<Cart  userId={userId} username={username}/>} />
             </Routes>
-           
-           
+
+
         </div>
 
 
     )
 }
-
