@@ -10,19 +10,19 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #2B66FF;
-  color: black;
+  background-color: #d2dd00;
+  color: rgb(224, 0, 0);
   padding-bottom: 10px;
 }
 
-a {
+.navLinks {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(225, 0, 0);
 }
 
 .gamingElite {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(225, 0, 0);
   font-family: "Press Start 2P", system-ui;
 }
 
@@ -37,7 +37,7 @@ h1 {
 }
 
 .searchBarContainer form {
-  background-color: #2B66FF;
+  background-color: #d2dd00;
   display: flex;
   flex-direction: row;
   padding: 0;
@@ -50,7 +50,7 @@ h1 {
 
 
 .searchBarContainer select {
-  background-color: white;
+  background-color: #ffffff;
   border: none;
   height: 30px;
   margin-top: 15px;
@@ -65,20 +65,24 @@ h1 {
 }
 
 .cartIcon{
-  filter: invert(100%)
+  color: rgb(225, 0, 0);
 }
+
 .searchButton {
   height: 37px;
   margin-top: 15px;
+  background-color: rgb(225, 0, 0);
+  color: #000000;
 }
 .navbar{
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: #d2dd00;
 }
 
 .navbar {
-  color: rgb(0, 0, 0);
+  color: rgb(225, 0, 0);
   font-size: 18px;
+  padding-bottom: 10px;
 }
 
 .retro-nav {
@@ -111,7 +115,7 @@ h1 {
   margin-left: 20px;
   padding: 5px 10px;
   background-color: #555;
-  color: #fff;
+  color: #d2dd00;
   border: none;
   cursor: pointer;
 }
