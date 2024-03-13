@@ -3,10 +3,31 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { Link } from 'react-router-dom'
 import styles from '../style/Retro.module.css'
+import Nav from './Nav'
 
-export default function Retro() {
+export default function Retro({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn }) {
   const [game, setGame] = useState([])
   const [consoles, setConsoles] = useState([])
+
+  const [search, setSearch] = useState('');
+
+    const handleChange = (event) => {
+        setSearch(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Search term:', search);
+        setSearchTerm(search);
+        console.log('New search term:', search);
+    };
+    const handleSearchTypeChange = (event) => {
+        setSearchType(event.target.value);
+    };
+
+    const handleSignOut = () => {
+        setLoggedIn(false);
+    };
 
   const navigate = useNavigate()
   let showConsole = (id) => {
@@ -31,6 +52,46 @@ export default function Retro() {
 
   return (
     <div>
+
+        <div className="retro-header">
+            <div className="retro-title-and-buttons">
+                <Link to="/" className="title">
+                    <h1 className="retro-gaming-elite">Gaming Elite</h1>
+                </Link>
+                <div className="search-bar-container">
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" value={search} onChange={handleChange} placeholder="Search games, consoles, and more" />
+                        <select onChange={handleSearchTypeChange}>
+                            <option value="games">Game</option>
+                            <option value="consoles">Console</option>
+                        </select>
+                        <button className="search-button" type="submit">Search</button>
+                    </form>
+                </div>
+                <div className="top-right-buttons">
+                    {loggedIn ? (
+                         <div>
+                       <span style={{ color: 'red' }}>Welcome, {username}</span>
+                       <button type="button" onClick={handleSignOut}>Sign Out</button>
+                       </div>
+                    ) : (
+                        <Link to="/signup" className="signup-container">
+                                <img className="signup-icon"
+                                    src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png"
+                                    alt="login_img" />
+                        </Link>
+                    )}
+                    <Link to="/cart" className="cart-container">
+                            <img className="cart-icon"
+                                src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png"
+                                alt="Shopping_Cart"/>
+                    </Link>
+                </div>
+            </div>
+            <div className="navbar">
+                <Nav />
+            </div>
+        </div>
       <h1 className={styles['retro-game']}> Retro Games </h1> 
       <div className={styles['retro-card']}>
         {game.map((game, index) => (
@@ -52,6 +113,7 @@ export default function Retro() {
               <img className={styles['retro-console-cover']} src={console.img_path} alt="" />
               <h2 className={styles['retro-console-price']}>${console.price}</h2>
             </div>
+            
           )
         ))}
       </div>
