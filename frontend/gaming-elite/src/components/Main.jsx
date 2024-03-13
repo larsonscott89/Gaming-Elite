@@ -16,7 +16,7 @@ export default function Main (){
 
     const [loggedIn, setLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
-    const [userId, setUserId] = useState('');
+    const [user_id, setUserId] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
     const [searchType, setSearchType] = useState('');
     return(
@@ -29,7 +29,7 @@ export default function Main (){
                 <Route path="/" element={< Home loggedIn={loggedIn}/>} />
                 <Route path="/games" element={<Games />} />
 
-                <Route path="/games/:id" element={<GameDetails  userId={userId} />} />
+                <Route path="/games/:id" element={<GameDetails  user_id={user_id} />} />
 
                 <Route path="/consoles/:id" element={<ConsoleDetails />} />
 
@@ -38,7 +38,7 @@ export default function Main (){
                 <Route path="/searchResults" element={<SearchResults searchTerm={searchTerm} searchType={searchType} />} />
                 <Route path="/signup" element={<UserSignup />} />
                 <Route path="/login" element={<UserLogin setLoggedIn={setLoggedIn} setUsername={setUsername}  setUserId={setUserId}/>} />
-                <Route path="/cart" element={<Cart  userId={userId} username={username}/>} />
+                <Route path="/cart" element={<Cart  user_id={user_id} username={username}/>} />
             </Routes>
            
            
