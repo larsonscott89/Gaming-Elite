@@ -16,7 +16,7 @@ export default function ConsoleDetails ({ user_id }) {
             setConsoles(response.data)
         }
         getConsole()
-        
+
     }, [id])
 
     const addToCart = async () => {
@@ -34,7 +34,7 @@ export default function ConsoleDetails ({ user_id }) {
         }
     }
 
-
+console.log(consoles)
     return(
         <div className="console-details-page">
             <div className="console-details-container">
@@ -43,7 +43,7 @@ export default function ConsoleDetails ({ user_id }) {
                         <img className='console-image' src={consoles.img_path} alt="" />
                     </div>
                     <div className="details-section">
-                        <h4 className="brand-name" onClick={() => showBrand(id)}>{consoles.brand}</h4>
+                        <Link className="brand-name" to={'/brands/'+ consoles.brandId}>{consoles.brand}</Link>
                         <h2 className="console-name">{consoles.name}</h2>
                         <h2 className="console-price"> ${consoles.price}</h2>
                         <h3 className="console-release"> Release Year: <span className="year-released">{consoles.year_released}</span></h3>
@@ -51,6 +51,6 @@ export default function ConsoleDetails ({ user_id }) {
                     </div>
                 </div>
             </div>
-        </div>      
+        </div>
     )
 }
