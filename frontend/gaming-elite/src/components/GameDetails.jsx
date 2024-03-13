@@ -93,3 +93,6 @@ export default function GameDetails ({ user_id }) {
                     </div>
                 </div>
             </div>
+        </div>
+    )
+}
