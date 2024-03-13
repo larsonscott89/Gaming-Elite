@@ -16,6 +16,7 @@ import RetroGameDetails from "./RetroGameDetails";
 import RetroConsoleDetails from "./RetroConsoleDetails";
 import GamesByPlatform from "./GamesByPlatform";
 import BrandDetails from "./BrandDetails";
+import AccessoryDetail from './AccessoryDetail'
 
 export default function Main() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -50,6 +51,7 @@ export default function Main() {
 
         <Route path="/consoles" element={<Consoles />} />
         <Route path="/accessories" element={<Accessories />} />
+        <Route path="/accessories/:id" element={<AccessoryDetail />} />
         <Route
           path="/searchResults"
           element={
