@@ -37,6 +37,9 @@ export default function ConsoleDetails ({ user_id }) {
 console.log(consoles)
     return(
         <div className="console-details-page">
+            <div className="promo-container">
+                <h4 className="promo-text">Save 10% When You Buy $250+ In Store or Online</h4>
+            </div>
             <div className="console-details-container">
                 <div className="console-top-container">
                     <div className="console-image-container">
