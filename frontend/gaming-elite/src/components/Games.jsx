@@ -111,7 +111,7 @@ export default function Games() {
                 src={game.img_path}
                 alt=""
               />
-              <h3>{game.title}</h3>
+              <h3 className="random-game-name">{game.title}</h3>
             </div>
           ))}
         </div>
@@ -143,7 +143,7 @@ export default function Games() {
               onClick={() => showGame(game._id)}
             >
               <img className="suggested-image" src={game.img_path} alt="" />
-              <h3>{game.title}</h3>
+              <h3 className="suggested-game-name">{game.title}</h3>
             </div>
           ))}
         </div>
