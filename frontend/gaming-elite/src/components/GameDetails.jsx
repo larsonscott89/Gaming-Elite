@@ -28,6 +28,7 @@ export default function GameDetails () {
     
     }, [id])
   
+
     const handleAddToCart = () => {
         const newItem = { id: game._id, img: game?.img_path, name: game.title, price: game.price, };
         addToCart(newItem);
@@ -51,6 +52,9 @@ export default function GameDetails () {
                             <img className='rating-img' src={game?.rating_img} alt=''/>
                             <button onClick={handleAddToCart}>Add to Cart</button>
                         </div>
+
+
+
                     </div>
                     <div className="description-container">
                         <h3 className="description-title">Description</h3>
@@ -80,7 +84,8 @@ export default function GameDetails () {
                         </div>
                     </div>
                 </div>
-            
+
         </div>
     );
                                         }
+

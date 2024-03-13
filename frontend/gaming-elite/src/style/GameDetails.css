@@ -4,6 +4,22 @@
   background-color: white;
 }
 
+.promo-container {
+  background-color: #2B66FF;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -23px;
+  margin-bottom: 30px;
+}
+    .promo-text{
+      font-weight: 300;
+      color: white;
+      width: 15em;
+    }
+
 .game-details-container {
   display: flex; 
   flex-direction: column;
@@ -61,7 +77,10 @@
     .game-genres, .year-released {
       font-size: 1em;
       font-weight: 300;
+      padding-right: 100px;
     }
+
+
     .rating-img {
       width: 50px;
     }
@@ -92,17 +111,11 @@
       flex-direction: row;
     }
 
-   
-   .general-info hr {
-      border-bottom: 1px solid #f1f1f1;
-      width: 200px; 
-
+   .general-info-container hr {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 200px;
    }
-   .general-data hr {
-      border-bottom: 1px solid #f1f1f1;
-      width: 200px; 
-      
-   }
+  
    .general-info, .general-data {
     margin-bottom: 20px;
    }

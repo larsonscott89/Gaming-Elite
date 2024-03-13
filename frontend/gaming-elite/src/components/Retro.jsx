@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import axios from "axios"
-import { Link } from 'react-router-dom'
-import styles from '../style/Retro.module.css'
+import RetroHeader from "./RetroHeader"
+import styles from "../style/Retro.module.css"
 
 export default function Retro() {
   const [game, setGame] = useState([])
   const [consoles, setConsoles] = useState([])
-
   const navigate = useNavigate()
+  const location = useLocation()
+
   let showConsole = (id) => {
     navigate(`/retro/console/${id}`)
   }
@@ -30,31 +31,32 @@ export default function Retro() {
   }, [])
 
   return (
-    <div>
-      <h1 className={styles['retro-game']}> Retro Games </h1> 
-      <div className={styles['retro-card']}>
-        {game.map((game, index) => (
+    <body className={styles.retroBody}>
+      {location.pathname === "/retro" && <RetroHeader />}
+      <h1 className={styles.retroGame}> Retro Games </h1>
+      <div className={styles.retroCard}>
+        {game.map((game, index) =>
           game.year_released <= 1995 && (
             <div key={game._id} onClick={() => showGame(game._id)}>
-              <h1 className={styles['retro-game-title']}>{game.title}</h1>
-              <img className={styles['retro-game-cover']} src={game.img_path} alt="" />
-              <h2 className={styles['retro-game-price']}>${game.price}</h2>
+              <h1 className={styles.retroGameTitle}>{game.title}</h1>
+              <img className={styles.retroGameCover} src={game.img_path} alt="" />
+              <h2 className={styles.retroGamePrice}>${game.price}</h2>
             </div>
           )
-        ))}
+        )}
       </div>
-      <h1 className={styles['retro-console']}> Consoles </h1>
-      <div className={styles['retro-console-card']}>
-        {consoles.map((console, index) => (
+      <h1 className={styles.retroConsole}> Consoles </h1>
+      <div className={styles.retroConsoleCard}>
+        {consoles.map((console, index) =>
           console.year_released <= 1995 && (
             <div key={console._id} onClick={() => showConsole(console._id)}>
-              <h1 className={styles['retro-console-title']}>{console.name}</h1>
-              <img className={styles['retro-console-cover']} src={console.img_path} alt="" />
-              <h2 className={styles['retro-console-price']}>${console.price}</h2>
+              <h1 className={styles.retroConsoleTitle}>{console.name}</h1>
+              <img className={styles.retroConsoleCover} src={console.img_path} alt="" />
+              <h2 className={styles.retroConsolePrice}>${console.price}</h2>
             </div>
           )
-        ))}
+        )}
       </div>
-    </div>
+    </body>
   )
 }

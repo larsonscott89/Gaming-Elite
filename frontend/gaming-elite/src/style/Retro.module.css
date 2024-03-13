@@ -1,8 +1,8 @@
-.yellow-title-and-buttons {
-  background-color: rgb(225, 210, 1);
+.retroBody {
+  background-color: rgb(205, 181, 0);
 }
 
-.retro-game{
+.retroGame{
   background-image: url('https://t4.ftcdn.net/jpg/06/23/74/43/360_F_623744326_y3k2dlbQ8W0Ch3f04Qoejvtat1HbUJXL.webp');
   height: 150px;
   font-family: "Press Start 2P", system-ui;
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.retro-console {
+.retroConsole {
   background-image: url('https://t3.ftcdn.net/jpg/02/19/51/86/360_F_219518686_n7365j7IXWzGsICyzPNR0uU8quTwXzHA.webp');
   height: 150px;
   font-family: "Press Start 2P", system-ui;
@@ -25,7 +25,8 @@
   align-items: center;
 }
 
-.retro-card {
+.retroCard {
+  font-family: "Gugi", sans-serif;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -34,24 +35,26 @@
   align-items: center;
 }
 
-.retro-game-title {
+.retroGameTitle {
+  font-family: "Gugi", sans-serif;
   display: flex;
   width: 225px;
 }
 
-.retro-game-price {
+.retroGamePrice {
+  font-family: "Gugi", sans-serif;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
 
-.retro-game-cover {
+.retroGameCover {
   height: 275px;
   width: 225px;
 }
 
-.retro-console-card {
+.retroConsoleCard {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -61,33 +64,37 @@
   padding-bottom: 30px;
 }
 
-.retro-console-title {
+.retroConsoleTitle {
+  font-family: "Gugi", sans-serif;
   display: flex;
   width: 225px;
 }
 
-.retro-console-price {
+.retroConsolePrice {
+  font-family: "Gugi", sans-serif;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
 
-.retro-console-cover {
+.retroConsoleCover {
   height: 275px;
   width: 225px;
 }
 
-.return-link {
+.returnLink {
+  font-family: "Gugi", sans-serif;
   background-color: black;
 
 }
 
-.retro-game-description {
-  font-family: "Press Start 2P", system-ui;
+.retroGameDescription {
+  font-family: "Gugi", sans-serif;
   font-size: 36px;
 }
 
-.retro-details-card {
+.retroDetailsCard {
+  font-family: "Gugi", sans-serif;
   padding-top: 140px;
 }

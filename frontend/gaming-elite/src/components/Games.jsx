@@ -24,7 +24,15 @@ export default function Games() {
     const getGames = async () => {
       const response = await axios.get(`http://localhost:3001/games`);
 
-      setGames(response.data);
+      let filteredGames = [];
+
+      for (let game of response.data) {
+        if (game.year_released > 1995) {
+          filteredGames.push(game);
+        }
+      }
+
+      setGames(filteredGames);
     };
     getGames();
 
@@ -75,12 +83,11 @@ export default function Games() {
     <div className="games-page-container">
       <div className="top-ad-section">
         <div className="top-ad-container">
-        {pick1RandomAd().map((ad, index) => (
-          <div className="ad-card" key={index}>
-            <img className="ad-image" src={ad.image_path} alt="" />
-          </div>
-          
-        ))}
+          {pick1RandomAd().map((ad, index) => (
+            <div className="ad-card" key={index}>
+              <img className="ad-image" src={ad.image_path} alt="" />
+            </div>
+          ))}
         </div>
       </div>
       <div className="random-games-container">
@@ -91,7 +98,11 @@ export default function Games() {
               key={game._id}
               onClick={() => showGame(game._id)}
             >
-              <img className="random-game-icon-image" src={game.img_path} alt="" />
+              <img
+                className="random-game-icon-image"
+                src={game.img_path}
+                alt=""
+              />
               <h3>{game.title}</h3>
             </div>
           ))}
