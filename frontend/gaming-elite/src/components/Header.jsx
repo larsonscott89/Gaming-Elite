@@ -20,28 +20,7 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
     const handleChange = (event) => {
         setSearch(event.target.value);
         // Update search term as user types
-        setSearchTerm(event.target.value);
-        if (event.target.value.trim() === '') {
-            setGames([]);
-            setConsoles([]);
-        } else {
-            let url = '';
-            if (searchType === 'games') {
-                url = `http://localhost:3001/games/search?search=${event.target.value}`;
-            } else if (searchType === 'consoles') {
-                url = `http://localhost:3001/consoles/search?search=${event.target.value}`;
-            }
-    
-            axios.get(url)
-                .then(response => {
-                    if (searchType === 'games') {
-                        setGames(response.data || []);
-                    } else if (searchType === 'consoles') {
-                        setConsoles(response.data || []);
-                    }
-                })
-                .catch(error => console.error('Error fetching data: ', error));
-        }
+       
     };
 
     const handleSubmit = (event) => {
