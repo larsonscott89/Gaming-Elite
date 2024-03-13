@@ -50,6 +50,12 @@ margin-bottom: 10px;
         max-height: 300px;
     }
 
+    .random-game-name {
+        font-size: 1em;
+        font-weight: 700;
+        width: 300px;
+    }
+
 .platforms-container {
     display: flex;
     flex-direction: column;
@@ -112,8 +118,8 @@ margin-bottom: 10px;
             width: 200px;
             height: 200px;
         }
-        .game-card h3 {
+        .suggested-game-name {
             font-size: 1em;
-            font-weight: 300;
+            font-weight: 700;
             width: 200px;
         }
