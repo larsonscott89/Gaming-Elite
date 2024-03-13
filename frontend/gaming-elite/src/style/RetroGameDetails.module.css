@@ -129,3 +129,130 @@ h1 {
   width: 40px;
   height: 20px;
 }
+
+
+
+
+
+
+
+.retroDetailsCard {
+  margin-top: 175px;
+  display: flex;
+}
+
+.gameCover {
+  height: 250px;
+  width: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ratingImg {
+  height: 250px;
+  width: 175px;
+}
+
+.retroYear {
+
+}
+
+.retroGenre {
+
+}
+
+.retroPrice {
+
+}
+
+.retroOnline {
+
+}
+
+.retroGameDescription {
+
+}
+
+.returnLink {
+
+}
+
+.addToCart {
+
+}
+
+
+
+
+
+
+.retroFooter {
+  font-family: "Press Start 2P", system-ui;
+  background-color: #a90303;
+  color: black;
+  padding: 10px 0;
+  margin-bottom: -150px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.projectGithub {
+  text-align: center;
+  margin-right: -120px;
+}
+
+.projectGithub h4 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: .8em;
+}
+
+.teamContainer {
+  font-family: "Press Start 2P", system-ui;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 40%;
+  margin: 10px -150px;
+}
+.teamContainer h3 {
+  font-family: "Press Start 2P", system-ui;
+  margin: 0; 
+  margin-bottom: 15px;
+  font-size: 1em;
+
+}
+.teamContainer h4 {
+  font-family: "Press Start 2P", system-ui;
+  margin: 0; 
+  margin-bottom: 5px;
+  font-size: .8em;
+}
+footer a{
+  color: black;
+  text-decoration: underline;
+  font-weight: 300;
+}
+.teamMembersContainer {
+  font-family: "Press Start 2P", system-ui;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.divider {
+  border-left: 1px solid #ccc;
+  height: 80px; 
+  margin: 0;
+}
+.copyright {
+  margin-left: -120px;
+  font-size: .8em;
+}
