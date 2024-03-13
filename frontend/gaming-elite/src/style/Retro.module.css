@@ -1,3 +1,7 @@
+.yellow-title-and-buttons {
+  background-color: rgb(225, 210, 1);
+}
+
 .retro-game{
   background-image: url('https://t4.ftcdn.net/jpg/06/23/74/43/360_F_623744326_y3k2dlbQ8W0Ch3f04Qoejvtat1HbUJXL.webp');
   height: 150px;
