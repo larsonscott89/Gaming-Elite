@@ -27,6 +27,8 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
         event.preventDefault();
         // Update search term only when form is submitted
         setSearchTerm(search);
+        setGames([]);
+        setConsoles([]);
         navigate('/searchResults'); 
     };
 
