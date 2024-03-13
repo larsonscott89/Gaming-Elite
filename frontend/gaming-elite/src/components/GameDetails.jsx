@@ -51,6 +51,9 @@ export default function GameDetails ({ user_id }) {
     return(
 
         <div className="game-details-page">
+            <div className="promo-container">
+                <h4 className="promo-text">Save 10% When You Buy $250+ In Store or Online</h4>
+            </div>
             <div className="game-details-container">
                 <div className="top-container">
                     <div className="image-container">
