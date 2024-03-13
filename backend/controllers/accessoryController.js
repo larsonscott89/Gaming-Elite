@@ -12,9 +12,9 @@ const getAccessory = async (req, res) => {
 
 const getAccessoryById = async (req,res) => {
     try {
-        const Accessory = await Accessory.findById(req.params.id).populate()
-        if (Accessory) {
-            res.json(Accessory)
+        const accessories = await Accessory.findById(req.params.id).populate()
+        if (accessories) {
+            res.json(accessories)
         }
     } catch (error) {
         return res.status(500).send('Collection with the specified ID does not exists');

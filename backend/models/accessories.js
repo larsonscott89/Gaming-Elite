@@ -4,8 +4,9 @@ const { Schema } = require("mongoose");
 const Accessory = new Schema(
     {
         name:{type: String, required: true},
-        year_established: {type: Number, required: true},
-        country: {type: String, required: true}
+        price: {type: Number, required: true},
+        image: {type:String, required: false},
+        type:{type:String, required: false},
     },
     { timestamps: true }
 )
