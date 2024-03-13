@@ -2,39 +2,53 @@ body {
     margin: 0;
     position: relative;
     background-color: #f1f1f1;
-    
   }
 
-  .games-page-container {
-    font-family:  Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    margin:  auto;
+.games-page-container {
+font-family:  Helvetica, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100vw;
+margin: auto;
+}
 
-    
-  }
-
-  .random-games-container {
+.top-ad-section {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    margin-top: 147px;
     width: 100%;
-    background-color: white;
-    margin-top: 145px;
-  }
-        .random-cards-container {
-            display: flex;
-            flex: row;
-            justify-content: space-around;
-            margin: 0 auto;
-            width: 70%;
-            
-        }
-        .random-game-image {
-            max-height: 300px;
-        }
+    margin-bottom: 10px;
+    
+}
+    .top-ad-container{
+        background-color: #f1f1f1;
+    }
+    .ad-image {
+        width: 100%;
+    }
+
+
+.random-games-container {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+width: 100%;
+background-color: white;
+margin-bottom: 10px;
+
+
+}
+    .random-cards-container {
+        display: flex;
+        flex: row;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 70%;
+        
+    }
+    .random-game-icon-image {
+        max-height: 300px;
+    }
 
 .platforms-container {
     display: flex;
@@ -42,7 +56,7 @@ body {
     width: 100%;
     text-align: center;
     background-color: white;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
         .platforms-container h3 {
             font-weight: 600;
@@ -57,13 +71,19 @@ body {
         .platform-card {
         display: flex;
         flex-direction: column;
+        transition: transform 0.25s ease;
         }
+       
         .platform-image  {
             object-fit: cover;
             width: 200px;
             height: 200px;
             border-radius: 50%;
             border: 1px solid #e1e1e1;
+            transition: transform 0.25s ease;
+        }
+        .platform-image:hover {
+            transform: scale(1.05);
         }
         .platform-card h3 {
             font-size: 1em;
@@ -76,7 +96,6 @@ body {
     text-align: center;
     width: 100%;
     margin: auto;
-    margin-top: 10px;
     padding-bottom: 20px;
     background-color: white;
     

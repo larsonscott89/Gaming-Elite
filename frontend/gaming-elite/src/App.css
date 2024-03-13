@@ -1,4 +1,6 @@
 /* ----------HEADER---------- */
+
+
 .header {
     font-family:  Helvetica, sans-serif;
     display: flex;
@@ -18,7 +20,12 @@
 
 a {
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
+}
+
+.gaming-elite {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -43,6 +50,7 @@ h1 {
     height: 20px;
 }
 
+
 .search-bar-container select {
     background-color: white;
     border: none;
@@ -50,7 +58,7 @@ h1 {
     margin-top: 15px;
     margin-left: -100px;
     width: 100px;
-   font-size: 1em;;
+   font-size: 1em;
 } 
 
 .signup-icon, .cart-icon {
@@ -69,10 +77,18 @@ h1 {
     width: 100%;
     background-color: #f1f1f1;
 }
-.navbar a {
-    color: black;
-    font-size: 1.2em;;
+
+.navbar {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
 }
+
+.retro-nav {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 18px;
+    color: rgb(225, 0, 0);
+}
+
 .nav-items {
     display: flex;
     flex-direction: row;
@@ -222,6 +238,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .project-github {

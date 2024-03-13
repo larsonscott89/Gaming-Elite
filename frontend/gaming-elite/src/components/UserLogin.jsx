@@ -59,32 +59,34 @@ const UserLogin = ({ setLoggedIn ,setUsername,setUserId }) => {
     };
 
     return (
-        <div className="form">
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    id="username"
-                    value={user.username}
-                    onChange={handleChange}
-                />
-                <label htmlFor="username">Username</label>
+        <div className="login-page-container">
+            <div className="form">
+                <h1>Login</h1>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        id="username"
+                        value={user.username}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="username">Username</label>
 
-                <input
-                    type="password"
-                    placeholder="Password"
-                    id="password"
-                    value={user.password}
-                    onChange={handleChange}
-                />
-                <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        id="password"
+                        value={user.password}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="password">Password</label>
 
-                <button type="submit">Login</button>
-                <button type="button" className="cancel" onClick={handleCancel}>
-                    Cancel
-                </button>
-            </form>
+                    <button type="submit">Login</button>
+                    <button type="button" className="cancel" onClick={handleCancel}>
+                        Cancel
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

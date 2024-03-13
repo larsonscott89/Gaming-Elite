@@ -1,13 +1,68 @@
-.details-card {
-  margin-bottom: 100px;
+.console-details-page {
+  padding-top: 170px;
+  font-family:  Helvetica, sans-serif;
+  background-color: white;
+}
+.console-details-container {
+  width: 100%;
+  padding-bottom: 100px; 
 }
 
-.game-cover {
-  height: 375px;
-  width: 325px;
+.console-top-container {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin: 0 auto;
+  
 }
+.console-image-container {
+  width: 55%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+  .console-image{
+    object-fit: contain;
+    width: 80%;
+    height: 400px;
+  }
 
-.rating-img {
-  height: 75px;
-  width: 50px;
+.details-section {
+  width: 45%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  
+  text-align: left;
+  padding-left: 25px;
 }
+    .brand-name {
+      margin-top: 0;
+      font-weight: 300;
+      text-decoration: underline;
+      margin-bottom: -200px;
+    }
+    .console-name {
+      margin-top: 0;
+      font-size: 2.4em;
+      margin-bottom: -200px;
+    }
+    .console-price{
+      font-size: 2em;
+      margin-bottom: -200px;
+    }
+    .console-release {
+      font-size: 1em;
+
+    }
+    .year-released {
+      font-size: 1em;
+      font-weight: 300;
+    }
+
+    .details-section button{
+      font-weight: 700;
+      
+    }

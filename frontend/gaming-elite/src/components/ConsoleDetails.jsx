@@ -9,12 +9,14 @@ export default function ConsoleDetails ({ user_id }) {
     let { id } = useParams()
     const [consoles, setConsoles] = useState('')
 
+
     useEffect(() => {
         const getConsole = async () => {
             const response = await axios.get(`http://localhost:3001/consoles/${id}`)
             setConsoles(response.data)
         }
         getConsole()
+        
     }, [id])
 
     const addToCart = async () => {
@@ -34,13 +36,21 @@ export default function ConsoleDetails ({ user_id }) {
 
 
     return(
-        <div className="details-card">
-      <h1>{consoles.name}</h1>
-      <img className='consoles-cover' src={consoles.img_path} alt="" />
-      <h3> Release Year: {consoles.year_released}</h3>
-      <h3> Brand {consoles.brand}</h3>
-      <h2> ${consoles.price}</h2>
-      <button onClick={addToCart}>Add to Cart</button>
-    </div>
+        <div className="console-details-page">
+            <div className="console-details-container">
+                <div className="console-top-container">
+                    <div className="console-image-container">
+                        <img className='console-image' src={consoles.img_path} alt="" />
+                    </div>
+                    <div className="details-section">
+                        <h4 className="brand-name" onClick={() => showBrand(id)}>{consoles.brand}</h4>
+                        <h2 className="console-name">{consoles.name}</h2>
+                        <h2 className="console-price"> ${consoles.price}</h2>
+                        <h3 className="console-release"> Release Year: <span className="year-released">{consoles.year_released}</span></h3>
+                        <button onClick={addToCart}>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>      
     )
 }
