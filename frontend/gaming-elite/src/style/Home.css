@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    position: relative;
+    background-color: #f1f1f1;
+  }
+
+.home-page-container {
+font-family:  Helvetica, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100vw;
+margin: auto;
+}
+
+.home-top-ad-section {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 147px;
+    
+}
+    .home-top-ad-container{
+        background-color: #f1f1f1;
+    }
+    .ad-image {
+        width: 100%;
+    }
+
+.home-bottom-ad-section {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+  
+    
+}
+    .home-bottom-ad-container{
+        background-color: #f1f1f1;
+    }
+   
+
+
+.home-random-games-container {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+width: 100%;
+background-color: white;
+margin-bottom: 10px;
+
+
+}
+    .home-random-cards-container {
+        display: flex;
+        flex: row;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 70%;
+        
+    }
+    .home-random-game-icon-image {
+        max-height: 300px;
+    }
+
+.home-platforms-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 10px;
+}
+        .home-platforms-container h3 {
+            font-weight: 600;
+        }
+        .home-platform-cards-container {
+            display: flex;
+            flex: row;
+            justify-content: space-around;
+            margin: 0 auto;
+            width: 70%;
+        }
+        .home-platform-card {
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease;
+        }
+       
+        .home-platform-image  {
+            object-fit: cover;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid #e1e1e1;
+            transition: transform 0.25s ease;
+        }
+        .home-platform-image:hover {
+            transform: scale(1.05);
+        }
+        .home-platform-card h3 {
+            font-size: 1em;
+            font-weight: 300;
+        }
+
+.home-suggested-games-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+    background-color: white;
+    
+}
+        .home-suggested-cards-container {
+            display: flex;
+            flex: row;
+            justify-content: space-around;
+            margin: 0 auto;
+            width: 70%;
+        }
+        .home-suggested-image {
+            object-fit: cover;
+            width: 200px;
+            height: 200px;
+        }
+        .home-game-card h3 {
+            font-size: 1em;
+            font-weight: 300;
+            width: 200px;
+        }
