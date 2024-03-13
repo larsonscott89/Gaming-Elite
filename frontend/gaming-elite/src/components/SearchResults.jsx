@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from './Header';
 import SearchConsoleList from './searchConsoleList';
 import SearchGameList from './searchGameList';
+import '../style/searchResult.css'
 
 function SearchResults({loggedIn}) {
     const [games, setGames] = useState([]);
@@ -39,10 +40,8 @@ function SearchResults({loggedIn}) {
 
 
     return (
-        <div>
-            <Header setSearchTerm={setSearchTerm} setSearchType={setSearchType} />
-            <SearchGameList games={games} />
-            <SearchConsoleList consoles={consoles} />
+        <div className='search'>
+       
         </div>
     );
 }

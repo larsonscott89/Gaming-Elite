@@ -1,34 +1,33 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import '../style/ShoppingCart.css';
+import { useCart } from '../CartContext';
+const Cart = () => {
+  const { cartItems, removeFromCart,cartTotal } = useCart();
 
-const Cart = ({ user_id }) => {
-  const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    const fetchCartItems = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3001/users/${user_id}/cart`);
-        setCartItems(response.data.items); 
-      } catch (error) {
-        console.error('Error fetching cart items:', error);
-      }
+    return (
+        <div className='shoppingcart_container'>
+          <div className='title'>
+            <h1>Shopping Cart</h1>
+          </div>
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty</p>
+          ) : (
+            <div>
+              <ul>
+                {cartItems.map(item => (
+                  <li key={item.id}>
+                    <img src={item.img} alt={item.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                    {item.name} - ${item.price} - Quantity: {item.quantity}
+                    <button onClick={() => removeFromCart(item.id)}>Remove</button>
+                  </li>
+                ))}
+              </ul>
+              <div className='total'>
+                <p>Total: ${cartTotal}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      );
     };
-
-    fetchCartItems();
-  }, [user_id]);
-
-  return (
-    <div>
-      <h1>Shopping Cart</h1>
-      <ul>
-        {cartItems.map(item => (
-          <li key={item._id}>
-            {item.name} - ${item.price} - Quantity: {item.quantity}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
 export default Cart;

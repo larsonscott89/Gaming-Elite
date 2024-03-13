@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import axios from "axios";
 import '../style/ConsoleDetails.css'
+import { useCart } from '../CartContext';
 
 export default function ConsoleDetails ({ user_id }) {
-
+    const { addToCart } = useCart();
     let { id } = useParams()
     const [consoles, setConsoles] = useState('')
 
@@ -19,21 +20,11 @@ export default function ConsoleDetails ({ user_id }) {
         
     }, [id])
 
-    const addToCart = async () => {
-        try {
-            if (user_id) {
-                await axios.post(`http://localhost:3001/users/${user_id}/shopping-cart/items`, {
-                    itemId: consoles._id
-                })
-                alert("Item added to cart successfully!")
-            } else {
-                alert("Please log in to add items to the cart.")
-            }
-        } catch (error) {
-            console.error('Error occurred while adding to cart:', error)
-        }
-    }
-
+    const handleAddToCart = () => {
+        const newItem = { id: consoles._id, img: consoles?.img_path, name: consoles.name, price: consoles.price };
+        addToCart(newItem);
+        alert(`${consoles.name} x1 added to cart`);
+      };
 
     return(
         <div className="console-details-page">
@@ -47,7 +38,7 @@ export default function ConsoleDetails ({ user_id }) {
                         <h2 className="console-name">{consoles.name}</h2>
                         <h2 className="console-price"> ${consoles.price}</h2>
                         <h3 className="console-release"> Release Year: <span className="year-released">{consoles.year_released}</span></h3>
-                        <button onClick={addToCart}>Add to Cart</button>
+                        <button onClick={handleAddToCart}>Add to Cart</button>
                     </div>
                 </div>
             </div>
