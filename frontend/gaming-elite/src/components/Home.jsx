@@ -24,7 +24,15 @@ export default function Home() {
     const getGames = async () => {
       const response = await axios.get(`http://localhost:3001/games`);
 
-      setGames(response.data);
+      let filteredGames = [];
+
+      for (let game of response.data) {
+        if (game.year_released > 1995) {
+          filteredGames.push(game);
+        }
+      }
+
+      setGames(filteredGames);
     };
     getGames();
 
@@ -73,14 +81,13 @@ export default function Home() {
 
   return (
     <div className="home-page-container">
-        
       <div className="home-top-ad-section">
         <div className="home-top-ad-container">
-        {pick1RandomAd().map((ad, index) => (
-          <div className="ad-card" key={index}>
-            <img className="ad-image" src={ad.image_path} alt="" />
-          </div>
-        ))}
+          {pick1RandomAd().map((ad, index) => (
+            <div className="ad-card" key={index}>
+              <img className="ad-image" src={ad.image_path} alt="" />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -92,7 +99,11 @@ export default function Home() {
               key={game._id}
               onClick={() => showGame(game._id)}
             >
-              <img className="home-random-game-icon-image" src={game.img_path} alt="" />
+              <img
+                className="home-random-game-icon-image"
+                src={game.img_path}
+                alt=""
+              />
               <h3>{game.title}</h3>
             </div>
           ))}
@@ -101,11 +112,11 @@ export default function Home() {
 
       <div className="home-bottom-ad-section">
         <div className="home-bottom-ad-container">
-        {pick1RandomAd().map((ad, index) => (
-          <div className="ad-card" key={index}>
-            <img className="ad-image" src={ad.image_path} alt="" />
-          </div>
-        ))}
+          {pick1RandomAd().map((ad, index) => (
+            <div className="ad-card" key={index}>
+              <img className="ad-image" src={ad.image_path} alt="" />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -134,7 +145,11 @@ export default function Home() {
               key={game._id}
               onClick={() => showGame(game._id)}
             >
-              <img className="home-suggested-image" src={game.img_path} alt="" />
+              <img
+                className="home-suggested-image"
+                src={game.img_path}
+                alt=""
+              />
               <h3>{game.title}</h3>
             </div>
           ))}
