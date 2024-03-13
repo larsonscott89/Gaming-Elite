@@ -38,6 +38,7 @@ export default function Main() {
         <Route path="/" element={<Home loggedIn={loggedIn} />} />
         <Route path="/games" element={<Games />} />
 
+
         <Route path="/games/:id" element={<GameDetails userId={userId} />} />
 
         <Route path="/consoles/:id" element={<ConsoleDetails />} />
@@ -73,4 +74,5 @@ export default function Main() {
       </Routes>
     </div>
   );
+
 }

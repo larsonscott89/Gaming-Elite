@@ -1,12 +1,21 @@
 import Nav from "./Nav";
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-const Header = ({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn }) => {
+import axios from 'axios';
+import SearchConsoleList from './searchConsoleList';
+import SearchGameList from './searchGameList';
+
+
+const Header = ({  loggedIn, username, setLoggedIn }) => {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
 
+    const [games, setGames] = useState([]);
+    const [consoles, setConsoles] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchType, setSearchType] = useState('game');
     
     const handleChange = (event) => {
         setSearch(event.target.value);
@@ -30,6 +39,34 @@ const Header = ({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn 
         localStorage.removeItem('loggedIn');
         
     };
+
+    useEffect(() => {
+        if (searchTerm.trim() === '') {
+            setGames([]);
+            setConsoles([]);
+            return;
+        }
+
+        let url = '';
+        if (searchType === 'games') {
+            url = `http://localhost:3001/games/search?search=${searchTerm}`;
+        } else if (searchType === 'consoles') {
+            url = `http://localhost:3001/consoles/search?search=${searchTerm}`;
+        }
+
+        axios.get(url)
+            .then(response => {
+                if (searchType === 'games') {
+                    setGames(response.data || []);
+                } else if (searchType === 'consoles') {
+                    setConsoles(response.data || []);
+                    
+                }
+            })
+            .catch(error => console.error('Error fetching data: ', error));
+    }, [searchTerm, searchType]);
+
+
 
     return (
         <div className="header">
@@ -71,6 +108,10 @@ const Header = ({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn 
             <div className="navbar">
                 <Nav />
             </div>
+            <div className='searchResult'>
+            <SearchGameList games={games} />
+            <SearchConsoleList consoles={consoles} />
+        </div>
         </div>
     );
 }
