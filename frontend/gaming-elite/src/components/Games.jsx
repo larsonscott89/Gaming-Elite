@@ -24,7 +24,18 @@ export default function Games() {
     const getGames = async () => {
       const response = await axios.get(`http://localhost:3001/games`);
 
-      setGames(response.data);
+      let filteredGames=[]
+
+      for(let game of response.data){
+        if(game.year_released>1995){
+          filteredGames.push(game)
+        }
+      }
+
+
+
+
+      setGames(filteredGames);
     };
     getGames();
 
@@ -61,6 +72,9 @@ export default function Games() {
     }
   }
 
+
+
+
   const pick2RandomItems = () => {
     const shuffledArray = games.sort(() => 0.5 - Math.random());
     return shuffledArray.slice(0, 2);
@@ -79,7 +93,7 @@ export default function Games() {
           <div className="ad-card" key={index}>
             <img className="ad-image" src={ad.image_path} alt="" />
           </div>
-          
+
         ))}
         </div>
       </div>
