@@ -1,4 +1,5 @@
-const { ShoppingCart } = require('../models')
+const {  User,CartItem ,ShoppingCart } = require('../models')
+
 
 const getShoppingCarts = async (req, res) => {
     try {
@@ -20,14 +21,8 @@ const getShoppingCartById = async (req,res) => {
     }
 }
 
-const getUserShoppingCart = async (req,res) => {
-    try {
-        const shoppingCart = await ShoppingCart.findOne({user: [req.params.id]})
-        res.json(shoppingCart)
-    } catch (e) {
-        return res.status(500).send('Collection with the specified ID does not exists');
-    }
-}
+
+    
 
 const createShoppingCart = async (req,res) => {
     try {
@@ -67,6 +62,33 @@ const deleteShoppingCart = async (req, res) => {
     }
 }
 
+const addShoppingCart = async (req, res) => {
+    const { userId } = req.params;
+    console.log(userId)
+  const { name, price, quantity } = req.body;
+  try {
+    const newItem = new CartItem({ name, price, quantity, user: userId });
+    await newItem.save();
+    res.status(201).json(newItem);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to add item to cart' });
+  }
+}
+const getUserShoppingCart = async (req, res) => {
+    const { userId } = req.params;
+    console.log(userId)
+    try {
+      const items = await CartItem.find({ user: userId });
+      res.json(items);
+    } catch (error) {
+      res.status(500).json({ message: 'Failed to fetch cart items' });
+    }
+  };
+  const getCarts = async (req, res) => {
+    res.json(shoppingCarts);
+}
+
+
 module.exports = {
     getShoppingCarts,
     getShoppingCartById,
@@ -74,4 +96,5 @@ module.exports = {
     createShoppingCart,
     updateShoppingCart,
     deleteShoppingCart,
+    addShoppingCart
 }

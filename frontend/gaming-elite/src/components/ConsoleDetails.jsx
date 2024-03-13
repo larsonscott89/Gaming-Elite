@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from "axios";
 import '../style/ConsoleDetails.css'
 
-export default function ConsoleDetails ({ userId }) {
+export default function ConsoleDetails ({ user_id }) {
 
     let { id } = useParams()
     const [consoles, setConsoles] = useState('')
@@ -21,8 +21,8 @@ export default function ConsoleDetails ({ userId }) {
 
     const addToCart = async () => {
         try {
-            if (userId) {
-                await axios.post(`http://localhost:3001/users/${userId}/shopping-cart/add`, {
+            if (user_id) {
+                await axios.post(`http://localhost:3001/users/${user_id}/shopping-cart/items`, {
                     itemId: consoles._id
                 })
                 alert("Item added to cart successfully!")

@@ -1,40 +1,55 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from 'react-router-dom'
 import axios from "axios";
 import '../style/GameDetails.css'
 
-export default function GameDetails ({ userId }) {
+export default function GameDetails ({ user_id }) {
 
     let { id } = useParams()
-    const [game, setGame] = useState('')
+    const [game, setGame] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         const getGame = async () => {
-            const response = await axios.get(`http://localhost:3001/games/${id}`)
-            setGame(response.data)
-            console.log(response.data)
+            try {
+                const response = await axios.get(`http://localhost:3001/games/${id}`)
+                setGame(response.data)
+               
+                setLoading(false)
+            } catch (error) {
+                setError(error.message || 'Error fetching game details')
+                setLoading(false)
+            }
         }
         getGame()
+    
     }, [id])
-
+  
     const addToCart = async () => {
         try {
-            if (userId) {
-                await axios.post(`http://localhost:3001/users/${userId}/shopping-cart/items`, {
-                    itemId: game._id
-                })
-                alert("Item added to cart successfully!")
+
+            if (user_id) {
+                await axios.post(`http://localhost:3001/users/${user_id}/cart`, {
+                    name: game.title,
+                    price: game.price,
+                    quantity: 1
+                });
+                alert("Item added to cart successfully!");
+
             } else {
-                alert("Please log in to add items to the cart.")
+                alert("Please log in to add items to the cart.");
             }
         } catch (error) {
-            console.error('Error occurred while adding to cart:', error)
+            console.error('Error occurred while adding to cart:', error);
         }
-    }
+    };
 
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     return(
+
         <div className="game-details-page">
             <div className="game-details-container">
                 <div className="top-container">
@@ -78,6 +93,3 @@ export default function GameDetails ({ userId }) {
                     </div>
                 </div>
             </div>
-        </div>
-    )
-}
