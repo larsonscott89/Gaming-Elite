@@ -60,7 +60,7 @@ const searchConsole = async (req, res) => {
   try {
     const searchTerm = req.query.search;
 
-    const consoles = await Console.find(); // Use the appropriate method to fetch console data from your database
+    const consoles = await Consoles.find(); // Use the appropriate method to fetch console data from your database
     // Filter the consoles based on the search term
     const filteredConsoles = consoles.filter(console => console.name.toLowerCase().includes(searchTerm.toLowerCase()));
 

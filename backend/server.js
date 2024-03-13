@@ -8,7 +8,7 @@ const brandController = require('./controllers/brands')
 const userController = require('./controllers/user')
 const bannerAdController = require('./controllers/bannerAdController')
 const { getCartItems, getCartItemById, createCartItem, updateCartItem, deleteCartItem, getCartItemsInShoppingCart } = require('./controllers/cartItemController');
-const { getShoppingCarts, getShoppingCartById, createShoppingCart, updateShoppingCart, deleteShoppingCart, getUserShoppingCart } = require('./controllers/shoppingCartController');
+const { getShoppingCarts,addShoppingCart, getShoppingCartById, createShoppingCart, updateShoppingCart, deleteShoppingCart, getUserShoppingCart } = require('./controllers/shoppingCartController');
 const { getAccessory, getAccessoryById, createAccessory, updateAccessory, deleteAccessory} = require('./controllers/accessoryController');
 const db = require('./db')
 
@@ -88,9 +88,9 @@ app.get('/cartItems/:id', getCartItemById)
 app.put('/cartItems/:id/update', updateCartItem)
 app.delete('/cartItems/:id/delete', deleteCartItem)
 //user shopping cart and items
-app.get('/users/:id/shopping-cart', getUserShoppingCart);
+app.get('/users/:id/cart', getUserShoppingCart);
+app.post('/users/:id/cart', addShoppingCart);
 app.get('/users/:id/shopping-cart/items', getCartItemsInShoppingCart)
-
 //handle 404 error
 app.get('/*', async (req,res) => {
   res.send('An error has occurred. Try again later (404)')
