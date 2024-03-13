@@ -43,7 +43,6 @@ console.log(consoles)
                         <img className='console-image' src={consoles.img_path} alt="" />
                     </div>
                     <div className="details-section">
-                        {/* <h4 className="brand-name" onClick={() => showBrand(id)}>{consoles.brand}</h4> */}
                         <Link className="brand-name" to={'/brands/'+ consoles.brandId}>{consoles.brand}</Link>
                         <h2 className="console-name">{consoles.name}</h2>
                         <h2 className="console-price"> ${consoles.price}</h2>
