@@ -69,11 +69,37 @@ const deleteCartItem = async (req, res) => {
     }
 }
 
+const addItem = async (req, res) => {
+    const { userId } = req.params;
+    console.log(userId)
+  const { name, price, quantity } = req.body;
+  try {
+    const newItem = new CartItem({ name, price, quantity, user: userId });
+    await newItem.save();
+    res.status(201).json(newItem);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to add item to cart' });
+  }
+}
+const getItem= async (req, res) => {
+    try {
+        const items = await CartItem.find();
+        res.json(items);
+      } catch (error) {
+        res.status(500).json({ message: 'Failed to fetch cart items' });
+      }
+    };
+
+
+
+
 module.exports = {
     getCartItems,
     getCartItemById,
     getCartItemsInShoppingCart,
     createCartItem,
     updateCartItem,
-    deleteCartItem
+    deleteCartItem,
+    getItem,
+    addItem
 }
