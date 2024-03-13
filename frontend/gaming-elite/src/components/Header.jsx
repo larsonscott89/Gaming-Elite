@@ -1,6 +1,6 @@
 import Nav from "./Nav";
 import { useState ,useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
@@ -11,25 +11,27 @@ import SearchGameList from './searchGameList';
 const Header = ({  loggedIn, username, setLoggedIn }) => {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
-
+    const location = useLocation();
     const [games, setGames] = useState([]);
     const [consoles, setConsoles] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchType, setSearchType] = useState('game');
-    
+    const [showSearchResults, setShowSearchResults] = useState(false);
+
     const handleChange = (event) => {
         setSearch(event.target.value);
         // Update search term as user types
        
     };
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Update search term only when form is submitted
         setSearchTerm(search);
         setGames([]);
         setConsoles([]);
-        navigate('/searchResults'); 
+        setShowSearchResults(true);
+        navigate('/searchResults');
+        setSearch(''); // Clear the search input field
+   
     };
 
     const handleSearchTypeChange = (event) => {
@@ -41,6 +43,13 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
         localStorage.removeItem('loggedIn');
         
     };
+
+    useEffect(() => {
+        if (location.pathname !== '/searchResults') {
+            setShowSearchResults(false);
+            setSearchTerm('');
+        }
+    }, [location.pathname]);
 
     useEffect(() => {
         if (searchTerm.trim() === '') {
@@ -62,12 +71,10 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
                     setGames(response.data || []);
                 } else if (searchType === 'consoles') {
                     setConsoles(response.data || []);
-                    
                 }
             })
             .catch(error => console.error('Error fetching data: ', error));
     }, [searchTerm, searchType]);
-
 
 
     return (
