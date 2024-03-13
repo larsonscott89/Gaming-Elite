@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   let showGame = (id) => {
-    navigate(`${id}`);
+    navigate(`/games/${id}`);
   };
 
   useEffect(() => {

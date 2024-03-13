@@ -47,8 +47,6 @@ justify-content: space-around;
 width: 100%;
 background-color: white;
 margin-bottom: 10px;
-
-
 }
     .home-random-cards-container {
         display: flex;
@@ -56,7 +54,6 @@ margin-bottom: 10px;
         justify-content: space-around;
         margin: 0 auto;
         width: 70%;
-        
     }
     .home-random-game-icon-image {
         max-height: 300px;
@@ -85,7 +82,6 @@ margin-bottom: 10px;
         flex-direction: column;
         transition: transform 0.25s ease;
         }
-       
         .home-platform-image  {
             object-fit: cover;
             width: 200px;
@@ -121,11 +117,11 @@ margin-bottom: 10px;
         }
         .home-suggested-image {
             object-fit: cover;
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
         }
         .home-game-card h3 {
             font-size: 1em;
             font-weight: 300;
-            width: 200px;
+            width: 250px;
         }
