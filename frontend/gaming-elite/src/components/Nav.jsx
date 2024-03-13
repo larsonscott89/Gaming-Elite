@@ -14,7 +14,7 @@ export default function Nav (){
           <hr className="nav-divider" />
           <Link to="/accessories">  Accessories  </Link>
           <hr className="nav-divider" />
-          <Link to="/retro">  Retro  </Link>
+          <Link className='retro-nav' to="/retro">  Retro  </Link>
     
         </ul>
       </nav>

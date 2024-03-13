@@ -1,0 +1,93 @@
+.yellow-title-and-buttons {
+  background-color: rgb(225, 210, 1);
+}
+
+.retro-game{
+  background-image: url('https://t4.ftcdn.net/jpg/06/23/74/43/360_F_623744326_y3k2dlbQ8W0Ch3f04Qoejvtat1HbUJXL.webp');
+  height: 150px;
+  font-family: "Press Start 2P", system-ui;
+  color: rgb(22, 225, 0);
+  padding-top: 170px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.retro-console {
+  background-image: url('https://t3.ftcdn.net/jpg/02/19/51/86/360_F_219518686_n7365j7IXWzGsICyzPNR0uU8quTwXzHA.webp');
+  height: 150px;
+  font-family: "Press Start 2P", system-ui;
+  color: rgb(22, 225, 0);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.retro-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+.retro-game-title {
+  display: flex;
+  width: 225px;
+}
+
+.retro-game-price {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.retro-game-cover {
+  height: 275px;
+  width: 225px;
+}
+
+.retro-console-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.retro-console-title {
+  display: flex;
+  width: 225px;
+}
+
+.retro-console-price {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.retro-console-cover {
+  height: 275px;
+  width: 225px;
+}
+
+.return-link {
+  background-color: black;
+
+}
+
+.retro-game-description {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 36px;
+}
+
+.retro-details-card {
+  padding-top: 140px;
+}

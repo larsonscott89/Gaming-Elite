@@ -35,7 +35,7 @@ const Header = ({ setSearchTerm, setSearchType, loggedIn, username, setLoggedIn 
         <div className="header">
             <div className="title-and-buttons">
                 <Link to="/" className="title">
-                    <h1>Gaming Elite</h1>
+                    <h1 className="gaming-elite">Gaming Elite</h1>
                 </Link>
                 <div className="search-bar-container">
                     <form onSubmit={handleSubmit}>

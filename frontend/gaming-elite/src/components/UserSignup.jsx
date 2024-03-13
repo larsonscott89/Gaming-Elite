@@ -89,56 +89,58 @@ const UserSignup = () => {
     };
 
     return (
-        <div className="form">
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    id="username"
-                    value={user.username}
-                    onChange={handleChange}
-                />
-                <label htmlFor="username">Username</label>
+        <div className="signup-page-container">
+            <div className="form">
+                <h1>Sign Up</h1>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        id="username"
+                        value={user.username}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="username">Username</label>
 
-                <input
-                    type="password"
-                    placeholder="Password"
-                    id="password"
-                    value={user.password}
-                    onChange={handleChange}
-                />
-                <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        id="password"
+                        value={user.password}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="password">Password</label>
 
-                <input
-                    type="password"
-                    placeholder="Confirm password"
-                    id="passwordConfirm"
-                    value={user.passwordConfirm}
-                    onChange={handleChange}
-                />
-                <label htmlFor="passwordConfirm">Confirm password</label>
+                    <input
+                        type="password"
+                        placeholder="Confirm password"
+                        id="passwordConfirm"
+                        value={user.passwordConfirm}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="passwordConfirm">Confirm password</label>
 
-                <button type="submit">Sign Up</button>
+                    <button type="submit">Sign Up</button>
 
-              
-                <button type="button" className="cancel" onClick={handleCancel}>
-                    Cancel
-                </button>
-                {!user.valid && <p className="invalid">Passwords must match and meet the criteria.</p>}
-                {user.valid && <p className="valid">Passwords match.</p>}
-                <div className="or-line">
-                  <hr className="line" />
-                  <p>or</p>
-                 <hr className="line" />
-                    </div>
-                <Link to="/login">
-                    <button type="button" className="login">
-                       
-                        Login
+                
+                    <button type="button" className="cancel" onClick={handleCancel}>
+                        Cancel
                     </button>
-                </Link>
-            </form>
+                    {!user.valid && <p className="invalid">Passwords must match and meet the criteria.</p>}
+                    {user.valid && <p className="valid">Passwords match.</p>}
+                    <div className="or-line">
+                    <hr className="line" />
+                    <p>or</p>
+                    <hr className="line" />
+                        </div>
+                    <Link to="/login">
+                        <button type="button" className="login">
+                        
+                            Login
+                        </button>
+                    </Link>
+                </form>
+            </div>
         </div>
     );
 };
