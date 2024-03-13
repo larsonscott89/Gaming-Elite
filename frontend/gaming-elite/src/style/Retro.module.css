@@ -1,5 +1,5 @@
-.yellow-title-and-buttons {
-  background-color: rgb(225, 210, 1);
+.retro-gaming-elite {
+  font-family: "Press Start 2P", system-ui
 }
 
 .retro-game{
@@ -90,4 +90,8 @@
 
 .retro-details-card {
   padding-top: 140px;
+}
+
+header {
+  display: none;
 }
