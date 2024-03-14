@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
 import { useLocation } from "react-router-dom"
+import { useCart } from '../CartContext'
 import axios from "axios";
 import RetroHeader from "./RetroHeader"
 import RetroFooter from './RetroFooter'
@@ -12,6 +13,7 @@ export default function RetroConsoleDetails () {
   let { id } = useParams()
     const [console, setConsole] = useState('')
     const location = useLocation()
+    const { addToCart } = useCart()
 
     useEffect(() => {
         const getConsole = async () => {
@@ -21,19 +23,10 @@ export default function RetroConsoleDetails () {
         getConsole()
     }, [id])
 
-    const addToCart = async () => {
-        try {
-            if (userId) {
-                await axios.post(`http://localhost:3001/users/${userId}/shopping-cart/add`, {
-                    itemId: console._id
-                })
-                alert("Item added to cart successfully!")
-            } else {
-                alert("Please log in to add items to the cart.")
-            }
-        } catch (error) {
-            console.error('Error occurred while adding to cart:', error)
-        }
+    const handleAddToCart = () => {
+        const newItem = { id: console._id, img: console?.img_path, name: console.title, price: console.price, }
+        addToCart(newItem)
+        alert(`${console.title} x1 added to cart`)
     }
 
 
@@ -46,7 +39,7 @@ export default function RetroConsoleDetails () {
             <h3 className={styles.retroConsoleYear}> Release Year: {console.year_released}</h3>
             <h3 className={styles.retroBrandConsoles}> Brand {console.brand}</h3>
             <h2 className={styles.retroConsolePrice}> ${console.price}</h2>
-            <button className={styles.addToCart} onClick={addToCart}>Add to Cart</button>
+            <button className={styles.addToCart} onClick={handleAddToCart}>Add to Cart</button>
             <Link className={styles.returnLink} to='/retro'> Pixelate! </Link>
         </div>
             {location.pathname.startsWith("/retro/") && <RetroFooter />}

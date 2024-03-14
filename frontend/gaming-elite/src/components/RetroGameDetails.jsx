@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
 import { useLocation } from "react-router-dom"
+import { useCart } from '../CartContext'
 import axios from "axios"
 import RetroHeader from "./RetroHeader"
 import RetroFooter from './RetroFooter'
@@ -12,6 +13,7 @@ export default function RetroGameDetails () {
   let { id } = useParams()
   const [game, setGame] = useState('')
   const location = useLocation()
+  const { addToCart } = useCart()
 
   useEffect(() => {
     const getGame = async () => {
@@ -21,22 +23,6 @@ export default function RetroGameDetails () {
     }
     getGame()
 }, [id])
-
-const addToCart = async () => {
-    try {
-        if (userId) {
-            await axios.post(`http://localhost:3001/users/${userId}/shopping-cart/items`, {
-                itemId: game._id
-            })
-            alert("Item added to cart successfully!")
-        } else {
-            alert("Please log in to add items to the cart.")
-        }
-    } catch (error) {
-        console.error('Error occurred while adding to cart:', error)
-    }
-}
-
 
 const renderLogos = () => {
     if (!game.consoleId || game.consoleId.length === 0) return null
@@ -75,6 +61,12 @@ const renderLogos = () => {
     )
 }
 
+const handleAddToCart = () => {
+    const newItem = { id: game._id, img: game?.img_path, name: game.title, price: game.price, }
+    addToCart(newItem)
+    alert(`${game.title} x1 added to cart`)
+}
+
 return(
     <body className={styles.retroGameDetailsBody}>
         <div className={styles.retroDetailsCard}>
@@ -89,7 +81,7 @@ return(
             <h2 className={styles.retroGameDescription}> Description {game.description}</h2>
             <h3 className={styles.retroNumberOfPlayers}> Number of Players: {game.number_of_players}</h3>
             <h3 className={styles.retroOnline}> Online capabilities: {game.online}</h3>
-            <button className={styles.addToCart} onClick={addToCart}>Add to Cart</button>
+            <button className={styles.addToCart} onClick={handleAddToCart}>Add to Cart</button>
             <Link className={styles.returnLink} to="/retro"> Pixelate! </Link>
         
         </div>
