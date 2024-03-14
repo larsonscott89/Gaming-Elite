@@ -27,7 +27,7 @@ export default function Games() {
       let filteredGames = [];
 
       for (let game of response.data) {
-        if (game.year_released > 1995) {
+        if (game.year_released > 1998) {
           filteredGames.push(game);
         }
       }
