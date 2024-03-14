@@ -10,24 +10,37 @@ const SearchConsoleList = ({ consoles }) => {
   };
 
   return (
-    <div>
-      {!hideList &&
-        consoles.map((console) => (
-          <div key={console._id}>
-            <Link to={`/consoles/${console._id}`} onClick={handleClick}>
-              <h3>{console.name}</h3>
-              <img
-                src={console.img_path}
-                alt={console.title}
-                style={{ width: '100px', height: '100px' }}
-                onClick={handleClick}
-              />
-            </Link>
-            <p>Brand: {console.brand}</p>
-            <p>Year Released: {console.year_released}</p>
-            <p>Price: {console.price}</p>
-          </div>
-        ))}
+    <div className="search-page-container">
+        <div className="search-items-container">
+          {!hideList &&
+            consoles.map((console) => (
+              <Link to={`/consoles/${console._id}`} onClick={handleClick}>
+              <div className="search-card" key={console._id}>
+                <div className="search-image-container">  
+                  <img className="search-image"
+                    src={console.img_path}
+                    alt={console.title}
+                    onClick={handleClick}
+                  />
+                </div>
+                <div className="search-details-container">
+                  <div className='search-console-title-container'>
+                    <h2 className="search-title">{console.name}</h2>
+                  </div>
+                  <div className='search-details'>
+                    <div className='search-details-box'>
+                      <h3 className='search-price'>${console.price}</h3>
+                    </div>
+                    <div className='search-details-box'>
+                      <p className='search-brand-title'>Brand: <span className='search-brand'>{console.brand}</span></p>
+                      <p className='search-release-title'>Release Year: <span className='search-year-released'>{console.year_released}</span></p>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+              </Link>
+          ))}
+        </div>
     </div>
   );
 };
