@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import axios from "axios";
+import '../style/AccessoryDetail.css'
 
 import { useCart } from '../CartContext';
 
@@ -27,6 +28,8 @@ export default function AccessoryDetail ({ user_id }) {
         alert(`${accessories.name} x1 added to cart`);
       };
 
+      console.log(accessories)
+
 
     return(
         <div className="accessories-details-page">
@@ -36,9 +39,9 @@ export default function AccessoryDetail ({ user_id }) {
             <div className="accessories-details-container">
                 <div className="accessories-top-container">
                     <div className="accessories-image-container">
-                        <img className='accessories-image' src={accessories.img_path} alt="" />
+                        <img className='accessories-image' src={accessories.image} alt="" />
                     </div>
-                    <div className="details-section">
+                    <div className="accesories-details-section">
                         <h2 className="accessories-type"> {accessories.type}</h2>
                         <h2 className="accessories-name">{accessories.name}</h2>
                         <h2 className="accessories-price"> ${accessories.price}</h2>

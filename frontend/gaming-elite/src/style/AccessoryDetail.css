@@ -1,0 +1,77 @@
+.accessories-details-page {
+  padding-top: 170px;
+  font-family: Helvetica, sans-serif;
+  background-color: white;
+}
+
+.promo-container {
+  background-color: #2b66ff;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -23px;
+  margin-bottom: 30px;
+}
+.promo-text {
+  font-weight: 300;
+  color: white;
+  width: 15em;
+}
+
+.accessories-details-container {
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.accessories-top-container {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin: 0 auto;
+}
+.accessories-image-container {
+  width: 55%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+.accessories-image {
+  object-fit: contain;
+  width: 80%;
+  height: 400px;
+}
+
+.accesories-details-section {
+  width: 45%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+  padding-left: 25px;
+ align-items: start;
+ justify-content:space-around;
+}
+
+.accessories-name {
+
+  font-size: 2.4em;
+
+}
+.accessories-type {
+  font-size: 2em;
+
+}
+.accessories-price {
+
+  font-size: 1em;
+}
+
+.details-section button {
+  font-weight: 700;
+  width: 100%;
+}
