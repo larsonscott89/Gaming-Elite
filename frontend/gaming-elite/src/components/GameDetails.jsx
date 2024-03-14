@@ -17,7 +17,7 @@ export default function GameDetails () {
             try {
                 const response = await axios.get(`http://localhost:3001/games/${id}`)
                 setGame(response.data)
-               
+
                 setLoading(false)
             } catch (error) {
                 setError(error.message || 'Error fetching game details')
@@ -25,19 +25,19 @@ export default function GameDetails () {
             }
         }
         getGame()
-    
+
     }, [id])
-  
+
 
     const handleAddToCart = () => {
         const newItem = { id: game._id, img: game?.img_path, name: game.title, price: game.price, };
         addToCart(newItem);
         alert(`${game.title} x1 added to cart`);
   };
-
+console.log(game?.genre)
     return (
         <div className="game-details-page">
- 
+
                 <div className="game-details-container">
                     <div className="top-container">
                         <div className="image-container">
@@ -48,7 +48,7 @@ export default function GameDetails () {
                             <h2 className="game-price">${game?.price}</h2>
                             <h3 className="game-release">Release Year: <span className="year-released">{game?.year_released}</span></h3>
                             <h3 className="genres-title">Genres</h3>
-                            <h3 className="game-genres">{game?.genre}</h3>
+                            <h3 className="game-genres">{game?.genre.join(', ')}</h3>
                             <img className='rating-img' src={game?.rating_img} alt=''/>
                             <button onClick={handleAddToCart}>Add to Cart</button>
                         </div>
@@ -88,4 +88,3 @@ export default function GameDetails () {
         </div>
     );
 }
-
