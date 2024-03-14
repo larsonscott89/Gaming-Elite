@@ -36,9 +36,12 @@ export default function Retro() {
     <body className={styles.retroBody}>
       {location.pathname === "/retro" && <RetroHeader />}   
       <h1 className={styles.retroGame}> Retro Games </h1>
+      <a href='https://play.runescape.com/' target='_blank'>
+      <img className={styles.runescapeAd} src='https://cdn2.steamgriddb.com/logo_thumb/2feb75fc9b86f959e54a9cc501e190e3.png' />
+      </a>
       <div className={styles.retroCard}>
         {game.map((game, index) =>
-          game.year_released <= 1995 && (
+          game.year_released <= 1998 && (
             <div key={game._id} onClick={() => showGame(game._id)}>
               <h1 className={styles.retroGameTitle}>{game.title}</h1>
               <img className={styles.retroGameCover} src={game.img_path} alt="" />
@@ -50,7 +53,7 @@ export default function Retro() {
       <h1 className={styles.retroConsole}> Consoles </h1>
       <div className={styles.retroConsoleCard}>
         {consoles.map((console, index) =>
-          console.year_released <= 1995 && (
+          console.year_released <= 1999 && (
             <div key={console._id} onClick={() => showConsole(console._id)}>
               <h1 className={styles.retroConsoleTitle}>{console.name}</h1>
               <img className={styles.retroConsoleCover} src={console.img_path} alt="" />
