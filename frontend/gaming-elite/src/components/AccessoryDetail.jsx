@@ -46,7 +46,7 @@ export default function AccessoryDetail ({ user_id }) {
                         <h2 className="accessories-name">{accessories.name}</h2>
                         <h2 className="accessories-price"> ${accessories.price}</h2>
 
-                        <button onClick={handleAddToCart}>Add to Cart</button>
+                        <button className="accessory-add-button" onClick={handleAddToCart}>Add to Cart</button>
                     </div>
                 </div>
             </div>
