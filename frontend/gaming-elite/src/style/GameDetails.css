@@ -77,9 +77,9 @@
     .game-genres, .year-released {
       font-size: 1em;
       font-weight: 300;
-      padding-right: 100px;
+      margin-right: 10px;
     }
-
+   
 
     .rating-img {
       width: 50px;
