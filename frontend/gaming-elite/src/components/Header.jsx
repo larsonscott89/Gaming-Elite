@@ -87,7 +87,7 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
                     <form onSubmit={handleSubmit}>
                         <input type="text" value={search} onChange={handleChange} placeholder="Search games, consoles, and more" />
                         <select onChange={handleSearchTypeChange}>
-                            <option>Type</option>
+                            <option>Choose Type</option>
                             <option value="games">Game</option>
                             <option value="consoles">Console</option>
                         </select>
