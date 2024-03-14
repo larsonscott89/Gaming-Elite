@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom'
+import { useLocation } from "react-router-dom"
 import axios from "axios";
-import '../style/GameDetails.css'
+import RetroHeader from "./RetroHeader"
+import RetroFooter from './RetroFooter'
+import styles from '../style/RetroGameDetails.module.css'
 
 export default function RetroConsoleDetails () {
 
   let { id } = useParams()
     const [console, setConsole] = useState('')
+    const location = useLocation()
 
     useEffect(() => {
         const getConsole = async () => {
@@ -34,14 +38,18 @@ export default function RetroConsoleDetails () {
 
 
     return(
-        <div className="details-card">
-      <h1>{console.name}</h1>
-      <img className='consoles-cover' src={console.img_path} alt="" />
-      <h3> Release Year: {console.year_released}</h3>
-      <h3> Brand {console.brand}</h3>
-      <h2> ${console.price}</h2>
-      <button onClick={addToCart}>Add to Cart</button>
-      <Link className='return-link' to='/retro'> Pixelate! </Link>
-    </div>
+    <body className={styles.retroConsoleDetailsBody}>
+        <div className={styles.retroConsoleDetailsCard}>
+            {location.pathname.startsWith("/retro/") && <RetroHeader />}    
+            <h1>{console.name}</h1>
+            <img className={styles.consolesCover} src={console.img_path} alt="" />
+            <h3 className={styles.retroConsoleYear}> Release Year: {console.year_released}</h3>
+            <h3 className={styles.retroBrandConsoles}> Brand {console.brand}</h3>
+            <h2 className={styles.retroConsolePrice}> ${console.price}</h2>
+            <button className={styles.addToCart} onClick={addToCart}>Add to Cart</button>
+            <Link className={styles.returnLink} to='/retro'> Pixelate! </Link>
+        </div>
+            {location.pathname.startsWith("/retro/") && <RetroFooter />}
+    </body>
     )
 }
