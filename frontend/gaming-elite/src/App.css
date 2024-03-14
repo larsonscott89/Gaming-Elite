@@ -27,6 +27,7 @@ a {
 .gaming-elite {
     text-decoration: none;
     color: rgb(255, 255, 255);
+    font-family: 'Anton';
 }
 
 h1 {
@@ -57,9 +58,10 @@ h1 {
     border: none;
     height: 30px;
     margin-top: 15px;
-    margin-left: -100px;
-    width: 100px;
+    margin-left: -130px;
+    width: 130px;
    font-size: 1em;
+   text-align: right;
 } 
 
 .signup-icon, .cart-icon {
