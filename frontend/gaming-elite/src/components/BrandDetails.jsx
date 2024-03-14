@@ -37,7 +37,7 @@ export default function BrandDetails() {
   let consoleBrands = [];
 
   for (let system of consoles) {
-    if (system.brandId == id && system.year_released > 1995) {
+    if (system.brandId == id && system.year_released > 1999) {
       consoleBrands.push(system);
     }
   }
