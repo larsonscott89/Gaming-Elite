@@ -5,7 +5,8 @@ import '../style/searchResult.css'
 const SearchGameList = ({ games }) => {
   const [hideList, setHideList] = useState(false);
  
-  const handleClick = () => {
+  const handleClick = (event) => {
+    event.stopPropagation()
     setHideList(true);
   };
   
