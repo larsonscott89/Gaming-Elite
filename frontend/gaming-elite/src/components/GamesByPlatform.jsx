@@ -68,12 +68,21 @@ export default function GamesByPlatform() {
         <div className="top-ad-container">
           {pick1RandomAd().map((ad, index) => (
             <div className="ad-card" key={index}>
+            {ad._id == "65f20cd13bca3e1777f5175a" ? (
+              <a
+                href="https://youtu.be/xvFZjo5PgG0?si=fVXJ0RLAmpGwk6ac"
+                target="_blank"
+              >
+                <img className="ad-image" src={ad.image_path} alt="" />
+              </a>
+            ) : (
               <img className="ad-image" src={ad.image_path} alt="" />
-            </div>
+            )}
+          </div>
           ))}
         </div>
       </div>
-      
+
 
       <div className="games-container">
         <div className="title-cards-container">
