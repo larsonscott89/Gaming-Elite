@@ -28,6 +28,8 @@ a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-family: 'Anton';
+    margin-bottom: -12px;
+   
 }
 
 h1 {
@@ -87,6 +89,7 @@ h1 {
 .navbar {
     color: rgb(0, 0, 0);
     font-size: 18px;
+    
 }
 
 .retro-nav {
