@@ -52,6 +52,11 @@ h1 {
     height: 20px;
 }
 
+  
+ 
+  .search-bar-container input[type="text"] {
+    padding-left: 15px; 
+  }
 
 .search-bar-container select {
     background-color: white;
