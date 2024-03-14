@@ -2,6 +2,14 @@
   background-color: rgb(205, 181, 0);
 }
 
+.runescapeAd {
+  width: 100%;
+  height: 150px;
+  border: 1px solid black;
+  background-color: rgb(91, 91, 91);
+  margin-top: 25px;
+}
+
 .retroGame{
   background-image: url('https://t4.ftcdn.net/jpg/06/23/74/43/360_F_623744326_y3k2dlbQ8W0Ch3f04Qoejvtat1HbUJXL.webp');
   height: 150px;

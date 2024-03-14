@@ -59,6 +59,13 @@ const renderLogos = () => {
                         return <img className={styles.nintendo} key={id} src='https://cdn.optipic.io/site-105077/media/com_eshop/categories/resized/NES%20Logo-210x145.png' alt="Nintendo" />
                     case '65f05f9bc0643c7f97323f3b':
                         return <img className={styles.atari} key={id} src='https://logoblink.com/static/85f986d0cdd759a866810b5829d9c91c/b0544/atari-logo.webp' alt="Atari" />
+                    case '65f2f88aa13bd3d29057019f':
+                        return <img className={styles.sega} key={id} src='https://static0.gamerantimages.com/wordpress/wp-content/uploads/2020/02/Sega-Genesis-Logo.jpg' alt="Sega Genesis" />
+                    case '65f2fa56a13bd3d2905701a1':
+                        return <img className={styles.superNintendo} key={id} src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/SNES_logo.svg/296px-SNES_logo.svg.png' alt="Super Nintendo" />
+                    case '65f2f99ca13bd3d2905701a0':
+                        return <img className={styles.nintendo64} key={id} src='https://logowik.com/content/uploads/images/n64-nintendo-642475.jpg' alt="Nintendo64" />
+                        
                     default:
                         return null
                 }
