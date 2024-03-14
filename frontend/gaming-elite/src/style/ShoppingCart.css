@@ -1,42 +1,135 @@
 /* ShoppingCart.css */
+/* ShoppingCart.css */
+body {
+  margin: 0;
+  position: relative;
+  background-color: #f1f1f1;
+}
 
 .shoppingcart_container {
+  padding-bottom: 0px;
+  width: 860px;
+  height: 1600px;
+  padding-top: 147px;
   font-family: Arial, sans-serif;
-  margin: 00px auto;
-  padding-top: 170px;
+  margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 1000px;
- 
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #f1f1f1; /* Gray background color */
 }
 
-.shopingcart_title {
+.title {
   font-size: 24px;
   margin-bottom: 20px;
+}
+
+.cart-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.UlCart {
+  padding: 0;
+  width: 50%; /* Adjust width as needed */
+  
+}
+.CardDetail{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  height: 190px;
+  width: 600px;
+  background-color: #fff !important;
+}
+.item-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
  
 }
 
-.total2 {
-  font-size: 16px;
+.itemName {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.itemPrice {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.Quantity {
   margin-bottom: 10px;
-  padding-right:200px
 }
 
-.shoppingcart ul {
-  list-style-type: none;
-  padding: 0;
+.order-summary {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 200px;
+  background-color: #fff !important;
+  height: 430px;
+  margin-left: 200px;
+}
+.CheckoutButton{
+margin:5px;
+width: 100%;
+box-sizing: border-box;
+height: 48px;
+font-size: .75rem;
+line-height: 1.2;
+background-color: rgb(212, 6, 6) !important;
+cursor: pointer;
 }
 
+.Paypal{
+  cursor: pointer;
+  background: #ffc439;
+  color: #111;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  vertical-align: top;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+}
+.itemName{
+  font-weight: bold;
+}
 .shoppingcart li {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+.promotion-code{
+width: 180px;
+  height: 10px;
+  margin-top: 20px;
+}
+.PromotionInput{
+  border-bottom: 1px solid #532727;
+    display: block;
+     margin: auto;
+    padding: 0.5rem 0;
+    transition: border 0.3s ease-in;
 }
 
 .shoppingcart img {
   width: 100px;
   height: 100px;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .shoppingcart button {
