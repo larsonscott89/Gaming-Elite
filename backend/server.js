@@ -29,6 +29,7 @@ app.get('/', async (req,res) => {
 //for search
 app.get('/games/search', gameController.searchGame)
 app.get('/consoles/search', consoleController.searchConsole)
+
 // create
 app.post('/users/signup', userController.userSignup)
 app.post('/users/login', userController.userLogin)
@@ -42,16 +43,11 @@ app.get('/brands/:id', brandController.getBrandById)
 app.get('/brands', brandController.getBrand)
 app.get('/consoles/:id', consoleController.getConsoleById)
 app.get('/consoles', consoleController.getConsole)
-
 app.get('/games/:id', gameController.getGameById)
 app.get('/games', gameController.getGame)
-
-
 app.get('/games/consoles/:id', consoleController.getGameConsoleById)
-
 app.get('/users/:id', userController.getUserById)
 app.get('/users', userController.getUser)
-
 app.get('/bannerAds', bannerAdController.getBannerAds)
 app.get('/retro', retroController.getRetro)
 
@@ -89,10 +85,12 @@ app.post('/cartItems/create', createCartItem)
 app.get('/cartItems/:id', getCartItemById)
 app.put('/cartItems/:id/update', updateCartItem)
 app.delete('/cartItems/:id/delete', deleteCartItem)
+
 //user shopping cart and items
 app.get('/cart', getItem);
 app.post('/cart', addItem);
 app.get('/users/:id/shopping-cart/items', getCartItemsInShoppingCart)
+
 //handle 404 error
 app.get('/*', async (req,res) => {
   res.send('An error has occurred. Try again later (404)')
