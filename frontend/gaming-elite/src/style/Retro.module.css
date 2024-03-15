@@ -1,5 +1,6 @@
 .retroBody {
   background-color: rgb(205, 181, 0);
+
 }
 
 .runescapeAd {
@@ -134,7 +135,8 @@
   font-family: "Press Start 2P", system-ui;
   background-color: #a90303;
   color: black;
-  padding: 20px 0;
+  padding: 25px 0;
+  margin-bottom: -30px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -142,7 +144,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
+
   z-index: 1;
 }
 
