@@ -1,5 +1,5 @@
 # Gaming-Elite
-An e-commerce site for all your gaming needs, whether they're modern or retro. Browse different pages of video games consoles and video game titles. Sign in and add any product to your shopping cart.
+An e-commerce site for all your gaming needs, whether they're modern or retro. Browse different pages of video game consoles and titles. Sign in and add any product to your shopping cart.
 
 ## Teammates
 - Scott Larsen [github](https://github.com/larsonscott89)
