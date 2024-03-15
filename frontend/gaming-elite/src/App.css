@@ -254,9 +254,9 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    
+    position: absolute;
 }
 
 .project-github {
