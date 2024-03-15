@@ -5,9 +5,11 @@ const Cart = () => {
   const { cartItems, removeFromCart, cartTotal } = useCart();
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
   const estimatedTax = 0.1 * cartTotal; // Assuming tax rate is 10%
+  
+
 
   const handleCheckout = () => {
-    // Implement your checkout logic here
+   
     alert('Checkout functionality is not implemented yet.');
   };
 
@@ -38,6 +40,7 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
+
               </div>
             ))}
           </div>
@@ -71,3 +74,4 @@ const Cart = () => {
 };
 
 export default Cart;
+
