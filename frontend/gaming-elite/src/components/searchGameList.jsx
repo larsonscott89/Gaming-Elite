@@ -1,35 +1,31 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../style/searchResult.css'
+import { Link, useLocation } from 'react-router-dom';
+import '../style/searchResult.css';
 
 const SearchGameList = ({ games }) => {
-  const [hideList, setHideList] = useState(false);
- 
-  const handleClick = (event) => {
-    event.stopPropagation()
-    setHideList(true);
+  const [hiddenGames, setHiddenGames] = useState([]);
+  const location = useLocation();
+
+  const handleClick = (gameId) => {
+    setHiddenGames([...hiddenGames, gameId]);
   };
-  
- 
+
+  const isGameHidden = (gameId) => hiddenGames.includes(gameId);
+
   return (
     <div className="search-page-container">
       <div className="search-title-items-container">
-      {location.pathname.startsWith("/search") &&
-        <div className="search-title">
-          <h1>Search Results</h1>
-        </div>
+        {location.pathname.startsWith("/search") &&
+          <div className="search-title">
+            <h1>Search Results</h1>
+          </div>
         }
         <div className="search-items-container">
-        {!hideList &&
-          games.map((game) => (
-            <Link to={`/games/${game._id}`} onClick={handleClick}>
-            <div className="search-card" key={game._id}>
+          {games.map((game) => (
+            <Link to={`/games/${game._id}`} key={game._id}>
+              <div className={`search-card ${isGameHidden(game._id) ? 'hidden' : ''}`}>
                 <div className="search-image-container">
-                  <img className='search-image'
-                    src={game.img_path}
-                    alt={game.title}
-                    onClick={handleClick}
-                  />
+                  <img className='search-image' src={game.img_path} alt={game.title} />
                 </div>
                 <div className="search-details-container">
                   <div className="search-title-container">
@@ -54,11 +50,11 @@ const SearchGameList = ({ games }) => {
                     </div>
                   </div>
                 </div>
-            </div>
+              </div>
             </Link>
           ))}
-          </div>
         </div>
+      </div>
     </div>
   );
 };
