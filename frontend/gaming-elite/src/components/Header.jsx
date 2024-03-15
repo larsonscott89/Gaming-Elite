@@ -81,7 +81,7 @@ const Header = ({  loggedIn, username, setLoggedIn, setGames, setConsoles }) => 
                 <div className="top-right-buttons">
                     {loggedIn ? (
                         <div>
-                            <span style={{ color: 'red' }}>Welcome, {username}</span>
+                            <span className="welcome-message">Welcome, {username}</span>
                             <button type="button" onClick={handleSignOut}>Sign Out</button>
                         </div>
                     ) : (

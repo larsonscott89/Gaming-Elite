@@ -74,12 +74,21 @@ h1 {
     padding-top: 10px;
 }
 
+.welcome-message {
+    font-weight: 700;
+    color: white;
+}
+
 .cart-icon{
     filter: invert(100%)
 }
 .search-button {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center;
     height: 37px;
     margin-top: 15px;
+    text-align: center;
 }
 .navbar{
     width: 100%;
