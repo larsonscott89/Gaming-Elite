@@ -257,10 +257,12 @@ footer {
     justify-content: space-between;
     align-items: center;
     position: absolute;
+    
 }
 
 .project-github {
     text-align: center;
+    margin-left: 150px;
     margin-right: -150px;
 }
 
@@ -304,6 +306,7 @@ footer a{
     margin: 0;
   }
 .copyright {
+    margin-right: 150px;
     margin-left: -150px;
     font-size: .8em;
 }

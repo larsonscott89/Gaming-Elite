@@ -8,6 +8,7 @@ body {
   .searchResults-page-container {
     padding-top: 147px;
     background-color: white;
+    padding-bottom: 150px;
 
   }
     .search-results-text {
@@ -25,7 +26,7 @@ width: 100%;
 }
   .search-title-items-container {
     width: 100%;
-    height: 1000px;
+    height: 100%;
     overflow-y: auto; /* or scroll */
     
   }
