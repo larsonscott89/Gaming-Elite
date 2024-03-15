@@ -69,7 +69,7 @@
   justify-content: space-around;
   text-align: center;
   align-items: center;
-  padding-bottom: 30px;
+  padding-bottom: 140px;
 }
 
 .retroConsoleTitle {
@@ -134,8 +134,7 @@
   font-family: "Press Start 2P", system-ui;
   background-color: #a90303;
   color: black;
-  padding: 10px 0;
-  margin-bottom: 0px;
+  padding: 20px 0;
   bottom: 0;
   left: 0;
   width: 100%;

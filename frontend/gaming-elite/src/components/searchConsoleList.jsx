@@ -11,6 +11,7 @@ const SearchConsoleList = ({ consoles }) => {
   const isConsoleHidden = (consoleId) => hiddenConsoles.includes(consoleId);
 
   return (
+
     <div className="search-page-container1">
       <div className="search-items-container">
         {consoles.map((console) => (
@@ -40,5 +41,6 @@ const SearchConsoleList = ({ consoles }) => {
     </div>
   );
 };
+
 
 export default SearchConsoleList;
