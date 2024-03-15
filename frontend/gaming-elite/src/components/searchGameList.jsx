@@ -15,11 +15,13 @@ const SearchGameList = ({ games }) => {
   return (
     <div className="search-page-container">
       <div className="search-title-items-container">
+
         {location.pathname.startsWith("/search") &&
           <div className="search-title">
     
           </div>
         }
+
         <div className="search-items-container">
 
           {games.map((game) => (
