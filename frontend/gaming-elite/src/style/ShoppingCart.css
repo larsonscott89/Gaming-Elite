@@ -3,14 +3,17 @@
 
 .shoppingcart_container {
   padding-bottom: 0px;
+
+
   width: 70%;
-  height: 600px;
+  height: 100%;
+
   padding-top: 147px;
   font-family: Arial, sans-serif;
   margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 100%;
+
   max-height: 100%;
   background-color: #f1f1f1; /* Gray background color */
   
@@ -42,24 +45,52 @@
 }
 .item-info {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-bottom: 30px;
+  height: 180px;
+}
+
+.item-image-container{
+  width: 180px;
+  height: 180px;
+}
+.item-image-container .cart-item-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.item-details-button-container{
+display: flex;
+flex-direction: column;
+height: 100%;
+width: 60%;
+justify-content: space-between;
+margin-left: 50px;
+
+}
+.item-details-container {
+  margin-top: 10px;
  
 }
+  .itemName {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  .itemPrice {
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .Quantity {
+    margin-bottom: 10px;
+  }
 
-.itemName {
-  font-weight: bold;
-  margin-bottom: 5px;
+.remove-button-container {
+  display: flex;
+  justify-content: flex-end;
 }
-
-.itemPrice {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.Quantity {
-  margin-bottom: 10px;
-}
+ 
 
 .order-summary {
   border: 1px solid #ddd;
@@ -84,16 +115,13 @@ cursor: pointer;
 
 .Paypal{
   cursor: pointer;
-  background: #ffc439;
+  background-color: #ffc439;
   color: #111;
-  position: relative;
+
   width: 100%;
   box-sizing: border-box;
-  border: none;
-  vertical-align: top;
   cursor: pointer;
-  outline: none;
-  overflow: hidden;
+
 }
 
 .summary-line {
@@ -121,12 +149,12 @@ width: 180px;
     transition: border 0.3s ease-in;
 }
 
-.shoppingcart img {
+/* .shoppingcart img {
   width: 100px;
   height: 100px;
   margin-right: 10px;
   margin-bottom: 10px;
-}
+} */
 
 .shoppingcart button {
   padding: 5px 10px;

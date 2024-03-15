@@ -22,8 +22,12 @@ export default function Main() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [userId, setUserId] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchType, setSearchType] = useState("");
+  const [games, setGames] = useState([]);
+  const [consoles, setConsoles] = useState([]);
+
+
+
+
   return (
     <div>
       <div>
@@ -31,8 +35,8 @@ export default function Main() {
           loggedIn={loggedIn}
           username={username}
           setLoggedIn={setLoggedIn}
-          setSearchTerm={setSearchTerm}
-          setSearchType={setSearchType}
+          setGames={setGames}
+          setConsoles={setConsoles}
         />
       </div>
       <Routes>
@@ -55,7 +59,7 @@ export default function Main() {
         <Route
           path="/searchResults"
           element={
-            <SearchResults searchTerm={searchTerm} searchType={searchType} />
+            <SearchResults games={games} consoles={consoles} />
           }
         />
         <Route path="/signup" element={<UserSignup />} />

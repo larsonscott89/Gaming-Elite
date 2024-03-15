@@ -38,7 +38,7 @@ export default function Accessory() {
               src={accessory.image}
               alt={accessory.name}
             />
-            <h3>{accessory.name}</h3>
+            <h3 className="accessory-name">{accessory.name}</h3>
             <p>{accessory.description}</p>
           </div>
         ))}

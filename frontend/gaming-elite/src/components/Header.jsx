@@ -2,35 +2,31 @@ import Nav from "./Nav";
 import { useState ,useEffect} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
-import SearchConsoleList from './searchConsoleList';
-import SearchGameList from './searchGameList';
 
 
-const Header = ({  loggedIn, username, setLoggedIn }) => {
-    const [search, setSearch] = useState('');
+
+const Header = ({  loggedIn, username, setLoggedIn, setGames, setConsoles }) => {
     const navigate = useNavigate();
     const location = useLocation();
-    const [games, setGames] = useState([]);
-    const [consoles, setConsoles] = useState([]);
+
     const [searchTerm, setSearchTerm] = useState('');
     const [searchType, setSearchType] = useState('game');
     const [showSearchResults, setShowSearchResults] = useState(false);
 
     const handleChange = (event) => {
-        setSearch(event.target.value);
+        setSearchTerm(event.target.value);
         // Update search term as user types
        
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        setSearchTerm(search);
-        setGames([]);
-        setConsoles([]);
+        setGames([])
+        setConsoles([])
+        executeSearch()
         setShowSearchResults(true);
         navigate('/searchResults');
-        setSearch(''); // Clear the search input field
+        setSearchTerm('')
    
     };
 
@@ -44,37 +40,25 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
         
     };
 
-    useEffect(() => {
-        if (location.pathname !== '/searchResults') {
-            setShowSearchResults(false);
-            setSearchTerm('');
+        function executeSearch () {
+            let url = '';
+            if (searchType === 'games') {
+                url = `http://localhost:3001/games/search?search=${searchTerm}`;
+            } else if (searchType === 'consoles') {
+                url = `http://localhost:3001/consoles/search?search=${searchTerm}`;
+            }
+            console.log(url)
+    
+            axios.get(url)
+                .then(response => {
+                    if (searchType === 'games') {
+                        setGames(response.data || []);
+                    } else if (searchType === 'consoles') {
+                        setConsoles(response.data || []);
+                    }
+                })
+                .catch(error => console.error('Error fetching data: ', error));
         }
-    }, [location.pathname]);
-
-    useEffect(() => {
-        if (searchTerm.trim() === '') {
-            setGames([]);
-            setConsoles([]);
-            return;
-        }
-
-        let url = '';
-        if (searchType === 'games') {
-            url = `http://localhost:3001/games/search?search=${searchTerm}`;
-        } else if (searchType === 'consoles') {
-            url = `http://localhost:3001/consoles/search?search=${searchTerm}`;
-        }
-
-        axios.get(url)
-            .then(response => {
-                if (searchType === 'games') {
-                    setGames(response.data || []);
-                } else if (searchType === 'consoles') {
-                    setConsoles(response.data || []);
-                }
-            })
-            .catch(error => console.error('Error fetching data: ', error));
-    }, [searchTerm, searchType]);
 
 
     return (
@@ -85,7 +69,7 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
                 </Link>
                 <div className="search-bar-container">
                     <form onSubmit={handleSubmit}>
-                        <input type="text" value={search} onChange={handleChange} placeholder="Search games, consoles, and more" />
+                        <input type="text" value={searchTerm} onChange={handleChange} placeholder="Search games, consoles, and more" />
                         <select onChange={handleSearchTypeChange}>
                             <option>Choose Type</option>
                             <option value="games">Game</option>
@@ -97,7 +81,7 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
                 <div className="top-right-buttons">
                     {loggedIn ? (
                         <div>
-                            <span style={{ color: 'red' }}>Welcome, {username}</span>
+                            <span className="welcome-message">Welcome, {username}</span>
                             <button type="button" onClick={handleSignOut}>Sign Out</button>
                         </div>
                     ) : (
@@ -117,10 +101,6 @@ const Header = ({  loggedIn, username, setLoggedIn }) => {
             <div className="navbar">
                 <Nav />
             </div>
-            <div className='searchResult'>
-            <SearchGameList games={games} />
-            <SearchConsoleList consoles={consoles} />
-        </div>
         </div>
     );
 }

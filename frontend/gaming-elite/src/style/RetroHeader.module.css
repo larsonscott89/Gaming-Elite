@@ -6,7 +6,7 @@
   width: 100%;
   top: 0;
   z-index: 1001;
-}
+  }
 .titleAndButtons {
   display: flex;
   flex-direction: row;
@@ -14,7 +14,7 @@
   align-items: center;
   background-color: #d2dd00;
   color: #a90303;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .navLinks {
