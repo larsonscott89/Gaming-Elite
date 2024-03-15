@@ -31,11 +31,7 @@ const SearchGameList = ({ games }) => {
                   <img className='search-image' src={game.img_path} alt={game.title} />
                 </div>
                 <div className="search-details-container">
-                  <div className="search-title-container">
-                    <h2 className='search-title'>{game.title}</h2>
-                    <h3 className="search-price">${game.price}</h3>
-
-                  </div>
+                  
                   <div className="search-details-container">
                     <div className="search-title-container">
                       <h2 className='search-title'>{game.title}</h2>
