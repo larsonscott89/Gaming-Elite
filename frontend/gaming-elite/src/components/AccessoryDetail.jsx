@@ -23,7 +23,7 @@ export default function AccessoryDetail ({ user_id }) {
 
 
     const handleAddToCart = () => {
-        const newItem = { id: accessories._id, img: accessories?.img_path, name: accessories.name, price: accessories.price };
+        const newItem = { id: accessories._id, img: accessories.image, name: accessories.name, price: accessories.price };
         addToCart(newItem);
         alert(`${accessories.name} x1 added to cart`);
       };
