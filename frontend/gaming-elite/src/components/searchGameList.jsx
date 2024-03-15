@@ -30,7 +30,10 @@ const SearchGameList = ({ games }) => {
                 <div className="search-image-container">
                   <img className='search-image' src={game.img_path} alt={game.title} />
                 </div>
-             
+
+          
+                  
+
                   <div className="search-details-container">
                     <div className="search-title-container">
                       <h2 className='search-title'>{game.title}</h2>
