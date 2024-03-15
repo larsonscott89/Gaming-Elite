@@ -85,7 +85,9 @@ return(
             <Link className={styles.returnLink} to="/retro"> Pixelate! </Link>
         
         </div>
+            <div className={styles.retroGameFooter}>
             {location.pathname.startsWith("/retro/") && <RetroFooter />}
+            </div>
     </body>
 )
 }

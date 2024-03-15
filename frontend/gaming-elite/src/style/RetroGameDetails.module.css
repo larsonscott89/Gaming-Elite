@@ -1,6 +1,7 @@
 /* Header */
 .retroGameDetailsBody { 
   background-color: rgb(205, 181, 0);
+  height: 100%;
 }
 
 .header {
@@ -138,7 +139,7 @@ h1 {
 
 /* Game details */
 .retroDetailsCard {
-  padding-top: 170px;
+  padding-top: 220px;
   font-family:  Helvetica, sans-serif;
   background-color: rgb(205, 181, 0);
   font-family: "Gugi", sans-serif;
@@ -293,8 +294,8 @@ h1 {
 }
 
 .consolesCover {
-  width: 450px;
-  height: 450px;
+  width: 250px;
+  height: 250px;
   display: flex;
   margin: 25px auto;
   justify-content: center;
@@ -310,25 +311,18 @@ h1 {
 }
 
 /* Footer */
-.retroFooter {
-  font-family: "Press Start 2P", system-ui;
-  background-color: #a90303;
-  color: black;
-  padding: 10px 0;
-  margin-bottom: -150px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  
-}
-
-.projectGithub {
-  text-align: center;
-  margin-right: -120px;
+.retroGameFooter {
+    font-family:  Helvetica, sans-serif;
+    background-color: #F1F1F1;
+    color: black;
+    margin-top: 140px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .projectGithub h4 {
@@ -343,7 +337,7 @@ h1 {
   flex-direction: column;
   text-align: center;
   width: 40%;
-  margin: 10px -150px;
+  margin: 10px 0px;
 }
 .teamContainer h3 {
   font-family: "Press Start 2P", system-ui;
