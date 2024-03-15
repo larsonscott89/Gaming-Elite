@@ -17,7 +17,7 @@ const SearchGameList = ({ games }) => {
       <div className="search-title-items-container">
         {location.pathname.startsWith("/search") &&
           <div className="search-title">
-            <h1>Search Results</h1>
+    
           </div>
         }
         <div className="search-items-container">
