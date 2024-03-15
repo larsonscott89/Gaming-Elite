@@ -6,7 +6,8 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    width: 100%
+    width: 100%;
+    z-index: 1000;
 }
 .title-and-buttons {
     display: flex;
@@ -26,6 +27,9 @@ a {
 .gaming-elite {
     text-decoration: none;
     color: rgb(255, 255, 255);
+    font-family: 'Anton';
+    margin-bottom: -6px;
+    margin-top: -6px;
 }
 
 h1 {
@@ -49,16 +53,20 @@ h1 {
 .search-bar-container input {
     height: 20px;
 }
-
+ 
+  .search-bar-container input[type="text"] {
+    padding-left: 15px; 
+  }
 
 .search-bar-container select {
     background-color: white;
     border: none;
     height: 30px;
     margin-top: 15px;
-    margin-left: -100px;
-    width: 100px;
+    margin-left: -130px;
+    width: 130px;
    font-size: 1em;
+   text-align: right;
 } 
 
 .signup-icon, .cart-icon {
@@ -66,12 +74,21 @@ h1 {
     padding-top: 10px;
 }
 
+.welcome-message {
+    font-weight: 700;
+    color: white;
+}
+
 .cart-icon{
     filter: invert(100%)
 }
 .search-button {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center;
     height: 37px;
     margin-top: 15px;
+    text-align: center;
 }
 .navbar{
     width: 100%;
@@ -81,6 +98,7 @@ h1 {
 .navbar {
     color: rgb(0, 0, 0);
     font-size: 18px;
+    
 }
 
 .retro-nav {

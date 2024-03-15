@@ -23,16 +23,21 @@ const Cart = () => {
           <div className='UlCart'>
             {cartItems.map(item => (
               <div className='CardDetail' key={item.id}>
-                 <div className='item-info'>
-                <img src={item.img} alt={item.name} style={{ width: '100px', height: '100px', marginRight: '10px' }} />
-                <div>
-               <div>  </div>
-               <div className='itemName'>{item.name}</div> 
-               <div className='itemPrice'>${item.price}</div>
-               <div className='Quantity'>Quantity: {item.quantity}</div> 
-               </div>
-               </div>
-                <button onClick={() => removeFromCart(item.id)}>Remove</button>
+                <div className='item-info'>
+                  <div className="item-image-container">
+                    <img className="cart-item-image" src={item.img} alt={item.name}/>
+                  </div>
+                  <div className="item-details-button-container">
+                    <div className="item-details-container">
+                      <div className='itemName'>{item.name}</div> 
+                      <div className='itemPrice'>${item.price}</div>
+                      <div className='Quantity'>Quantity: {item.quantity}</div> 
+                    </div>
+                    <div className="remove-button-container">
+                      <button className="remove-button" onClick={() => removeFromCart(item.id)}>Remove</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

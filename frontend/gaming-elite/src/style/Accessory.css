@@ -1,8 +1,31 @@
+body {
+  margin: 0;
+  position: relative;
+  background-color: #f1f1f1;
+}
+
+.accessory-page-container {
+  font-family:  Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  margin: auto;
+  padding-top: 147px;
+}
+
+.accessory-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px auto;
+  width: 70%;
+}
 .accessory-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 250px;
   height: 290px;
   margin: 15px;
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.25);
@@ -20,14 +43,11 @@
 .accessory-img {
   object-fit: contain;
   height: 200px;
-  margin-bottom: -20px;
+  margin-bottom: -10px;
   padding-top: 10px;
 }
 
-.accessory-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 5% auto;
-  width: 70%;
+.accessory-name {
+  width: 90%;
+  font-size: 1em;
 }

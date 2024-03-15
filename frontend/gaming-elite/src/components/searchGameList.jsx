@@ -32,7 +32,7 @@ const SearchGameList = ({ games }) => {
                     <h2 className='search-title'>{game.title}</h2>
                     <h3 className="search-price">${game.price}</h3>
                   </div>
-                  <div className="search-game-details">
+                  <div className="search-details">
                     <div className='search-details-box'>
                       <p className='search-release-title'>Release Year: <span className='search-year-released'>{game.year_released}</span></p>
                       <p className='search-genres-title'>Genres</p>

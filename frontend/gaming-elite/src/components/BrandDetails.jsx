@@ -37,7 +37,7 @@ export default function BrandDetails() {
   let consoleBrands = [];
 
   for (let system of consoles) {
-    if (system.brandId == id && system.year_released > 1995) {
+    if (system.brandId == id && system.year_released > 1999) {
       consoleBrands.push(system);
     }
   }
@@ -53,8 +53,17 @@ export default function BrandDetails() {
         <div className="top-ad-container">
           {pick1RandomAd().map((ad, index) => (
             <div className="ad-card" key={index}>
+            {ad._id == "65f20cd13bca3e1777f5175a" ? (
+              <a
+                href="https://youtu.be/xvFZjo5PgG0?si=fVXJ0RLAmpGwk6ac"
+                target="_blank"
+              >
+                <img className="ad-image" src={ad.image_path} alt="" />
+              </a>
+            ) : (
               <img className="ad-image" src={ad.image_path} alt="" />
-            </div>
+            )}
+          </div>
           ))}
         </div>
       </div>

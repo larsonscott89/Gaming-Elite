@@ -50,28 +50,27 @@
   height: 450px;
   display: flex;
   flex-direction: column;
-
   text-align: left;
   padding-left: 25px;
- align-items: start;
- justify-content:space-around;
+  align-items: start;
+  justify-content:space-between;
 }
 
-.accessories-name {
-
-  font-size: 2.4em;
-
-}
 .accessories-type {
-  font-size: 2em;
-
-}
-.accessories-price {
-
   font-size: 1em;
+  font-weight: 300;
+}
+.accessories-name {
+  font-size: 2em;
+  margin-top: -200px;
 }
 
-.details-section button {
+.accessories-price {
+  font-size: 1.5em;
+  margin-top: -200px
+}
+
+.accessory-add-button {
   font-weight: 700;
   width: 100%;
 }
