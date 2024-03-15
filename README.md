@@ -8,9 +8,10 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 - Connor Reidy [github](https://github.com/connorreidy1)
 ## Trello - Project Manager
 [Trello](https://trello.com/b/fJ1fUONn/project-3-games-elite)
+Created a "To-Do" list, a "Working on" list, and daily "Done" lists to track what we needed to accomplish and what we had completed. We attached a member of the team to each task to keep a record of what everyone had finished.
 
 ## Technologies
-- Mongo
+- MongoDB
 - Mongoose
 - Express
 - React
@@ -20,7 +21,7 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 - Body-parser
 - Javascript, HTML, CSS
 - React Icons
-- Swiper Carousel
+
   
 ## MVP
 - **MERN and CRUD**: Create a full-stack MERN application with full CRUD capability.
@@ -43,10 +44,19 @@ An e-commerce site for all your gaming needs, whether they're modern or retro. B
 <img width="500" alt="ERD-1" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/1fdaa851-2b28-440a-a616-0f29e4de0207">
 <img width="500" alt="ERD-2" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3a77025b-4f58-4395-859b-17aa4c8c52b4">
 
+## Component Hierarchy
+![Component Hierarchy](assets/ComponentHierarchy.png)
+
 ## Wireframe
+### Lofi
 <img width="500" alt="Wireframe-1" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/6e940fb1-55a8-4107-b3a0-6652e3edbcc4">
 <img width="500" alt="Wireframe-2" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/27420e54-e450-4295-b6ed-9da6a68db737">
 <img width="500" alt="Wireframe-3" src="https://github.com/connorreidy1/Gaming-Elite/assets/156346810/3246b0ff-5842-462d-b91a-97f5038e999f">
-![Component Hierarchy](assets/ComponentHierarchy.png)
 
-
+### Hifi
+![Figma](assets/FigmaHomepage.png)
+![Figma](assets/FigmaConsoles.png)
+![Figma](assets/FigmaGames.png)
+![Figma](assets/FigmaGamesByPlatform.png)
+![Figma](assets/FigmaGamesDetails.png)
+![Figma](assets/FigmaRetro.png)
