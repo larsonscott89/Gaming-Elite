@@ -21,7 +21,8 @@ function SearchResults({games, consoles}) {
     }
     const renderedComponent = renderComponent()
     return (
-        <div>
+        <div className="searchResults-page-container">
+            <h2 className="search-results-text">Search Results</h2>
             {renderedComponent}
         </div>
     )
