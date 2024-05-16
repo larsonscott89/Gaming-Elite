@@ -24,7 +24,7 @@ export default function RetroConsoleDetails () {
     }, [id])
 
     const handleAddToCart = () => {
-        const newItem = { id: console._id, img: console?.img_path, name: console.title, price: console.price, }
+        const newItem = { id: console._id, img: console?.img_path, name: console.name, price: console.price, }
         addToCart(newItem)
         alert(`${console.title} x1 added to cart`)
     }
